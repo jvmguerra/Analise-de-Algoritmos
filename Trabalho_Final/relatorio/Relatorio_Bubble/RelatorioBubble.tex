@@ -218,87 +218,101 @@ Universidade Federal de Uberlândia
 \setlength{\parskip}{0.15in} % espaçamento entre paragráfos
 
 \chapter{Introdução}
-Este documento foi escrito para auxiliar na confecção do relatório da
-disciplina. É necessário olhar os fontes deste documento em \LaTeX\ para
-compreender algumas coisas.
+Este documento foi feito com o intuito de exibir uma análise do algoritmo Bubble Sort 
+com relação a tempo. Além disso, será feita uma comparação da curva de tempo do que se espera do
+algoritmo, ou seja, $O(n^2)$ com o caso prático. 
 
-\section{Linha de comando}
-Para dar instruções sobre linha de comando use um ambiente que preparei
-(veja o preâmbulo desse documento para aprender como criar seu próprio
-ambiente):
+\section{Diretório}
 
-\begin{latex}
-\begin{terminal}
-> sudo apt-get install tree
-\end{terminal}
-\end{latex}
+Dada a seguinte organização das pastas, utilizamos o arquivo testdriver.py,  executando, uma função conveniente por vez. Para mais informações vá até ao apêndice.
 
-Um programa bastante útil é o \verb|tree| que lista o conteúdo de um
-diretório e de seus subdiretórios em forma de árvore. Para instalá-lo no
-Ubuntu, use:
+OBS.: É necessário instalar o programa tree pelo terminal. Isso pode ser feito da seguinte maneira.
 
 \begin{terminal}
 > sudo apt-get install tree
 \end{terminal}
 
-A seguir é mostrado o uso:
+A seguir é mostrada a organização das pastas sendo que os diretórios significativas para o projeto são Codigos e Relatorio além do raíz:
 \begin{terminal}
-> tree --charset=ASCII
+tree --charset=ASCII
 .
-|-- codigos
-|   |-- bolha.py
-|   `-- testdriver.py
-|-- imagens
-|   `-- bolha1.png
-|-- relatorio1.pdf
-`-- relatorio1.tex
+|-- Codigos
+|   |-- Bubble
+|   |   |-- BubbleSort.py
+|   |   `-- __pycache__
+|   |       |-- BubbleSort.cpython-34.pyc
+|   |       `-- testeBubble.cpython-34.pyc
+|   `-- README.md
+|-- memoria.py
+|-- monitor.py
+|-- Other
+|   |-- expfit0.py
+|   |-- expfit.py
+|   |-- leialprof.py
+|   |-- leitura1.py
+|   |-- leitura2.py
+|   |-- leitura.py
+|   `-- logfit.py
+|-- Plot
+|   |-- plot1.py
+|   |-- plot2.py
+|   |-- plot3.py
+|   `-- plot_tempo.py
+|-- __pycache__
+|   |-- monitor.cpython-34.pyc
+|   `-- tempo.cpython-34.pyc
+|-- relatorio
+|   |-- imagens
+|   |   |-- Bubble
+|   |   |   |-- bubble_plot_1.png
+|   |   |   `-- bubble_plot_3.png
+|   |   `-- Merge
+|   |-- Relatorio_Bubble
+|   |   |-- RelatorioBubble.aux
+|   |   |-- RelatorioBubble.idx
+|   |   |-- RelatorioBubble.lof
+|   |   |-- RelatorioBubble.log
+|   |   |-- RelatorioBubble.lol
+|   |   |-- RelatorioBubble.lot
+|   |   |-- RelatorioBubble.out
+|   |   |-- RelatorioBubble.tex
+|   |   `-- RelatorioBubble.toc
+|   |-- Relatorio_Merge
+|   `-- Resultados
+|       |-- Bubble
+|       |   `-- tBolha.dat
+|       `-- Merge
+|-- tempo.py
+|-- testdriver.py
+|-- testeGeneric.py
+`-- testeGeneric.py.lprof
 
-2 directories, 14 files
+15 directories, 35 files
+
 \end{terminal}
 
 \section{Códigos de programas}
-Para introduzir a listagem do código no documento existem pelo menos duas
-formas básicas, ambas usando o pacote \verb|listings|:
+Seguem os códigos utilizados na análise de tempo do algoritmo Bubble Sort.
 \begin{enumerate}
-\item Diretamente do documento \LaTeX\ usando por exemplo
-\begin{latex}
-\begin{python}
-import psutil
-import resource
+
+\item BubbleSort.py:
+Disponível na Listagem~\ref{arq:BubbleSort}.
+\lstinputlisting[caption={BubbleSort.py \label{arq:BubbleSort}}]{../../Codigos/Bubble/BubbleSort.py}
+
+\item testeGeneric.py
+Disponível na Listagem ~\ref{arq:testeGeneric}
+\lstinputlisting[caption={testeGeneric.py \label{arq:testeGeneric}}]{../../testeGeneric.py}
+
+\item monitor.py
+Disponível na Listagem~\ref{arq:monitor}
+\lstinputlisting[caption={monitor.py \label{arq:monitor}}]{../../monitor.py}
 
 
-def memory_usage_resource():
-    # return the memory usage in MB
-    rusage_denom = 1024.
-    mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / rusage_denom
-    return mem
-
-\end{python}
-\end{latex}
-cujo resultado é
-\begin{python}
-import psutil
-import resource
-
-
-def memory_usage_resource():
-    # return the memory usage in MB
-    rusage_denom = 1024.
-    mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / rusage_denom
-    return mem
-
-\end{python}  
-\item Lendo o código diretamente do arquivo:
-\begin{latex}
-\lstinputlisting[caption={bolha.py}]{Codigos/Bubble/BubbleSort.py}
-\end{latex}
-cujo resultado é mostrado na listagem~\ref{arq:exemplo1}.
-
-\lstinputlisting[caption={BubbleSort.py \label{arq:exemplo1}}]{../../Codigos/Bubble/BubbleSort.py}
+\item testdriver.py
+ Referenciado no apêndice~\ref{ap:testdriver}.
 \end{enumerate}
 
-Códigos muito grandes podem ser colocados nos apêndices e referenciados em
-seu texto. Um exemplo é o arquivo no apêndice~\ref{ap:Testes}.
+
 \chapter{Imagens}
 
 Se desejar incluir imagens você poderá usar o comando a seguir:
@@ -314,7 +328,7 @@ Se desejar incluir imagens você poderá usar o comando a seguir:
 O comando anterior gerará a imagem a seguir, dado que o arquivo \texttt{fig1.png} esteja no subdiretório \texttt{imagens}.
 \begin{figure}[!h]
 \centering
-\includegraphics[scale=0.5]{../imagens/bolha1.png}
+\includegraphics[scale=0.5]{../imagens/Bubble/bubble_plot_1.png}
 \caption{Complexidade de tempo do método da bolha \label{fig:1}}
 \end{figure}
 
@@ -388,7 +402,7 @@ inclui livros e documentos da internet, tais como tutoriais e páginas.
 \addcontentsline{toc}{part}{Apêndice}
 \appendix
 
-\chapter{Exemplos de programas escritos em Python \label{ap:Testes}}
+\chapter{Códigos extensos \label{ap:testdriver}}
 \section{testdriver.py}
 \lstinputlisting[label= {arq:testdriver.py}, caption={testdriver.py}] {../../testdriver.py}
 

@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import sys , shutil
 
 
-##PRA CADA NOVO METODO TEM QUE MUDAR a chamada das funções e o shutil.move()
+##PRA CADA NOVO METODO TEM QUE MUDAR a chamada das funções, o shutil.move(), e o savefig
 
 sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/Codigos/Bubble')  ## adicionei o código de ordenação
 sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble') ## adicionei o resultado do executa_teste
@@ -28,7 +28,6 @@ def executa_teste(arqteste, arqsaida, nlin, intervalo):
         #print("CMD:", cmd, "\nSTR_SAIDA: ",str_saida,"\nLINHAS: ",linhas,"\nUNIDADE_TEMPO: ",unidade_tempo)
         #print("Linhas4:",linhas[4]," ----->  Linhas 4 float: ",linhas[4].split()[2])
         tempo_total = float(linhas[3].split()[2])
-        #print("NLIN",nlin,"\nLINHAS[NLIN]: ",linhas[nlin], "\nLINHAS[NLIN+1]NAO TA VALENDO:",linhas[nlin])
         lcomp = linhas[nlin].split()
         num_comps = int(lcomp[1])
         str_res = '{:>8} {:>13} {:13.6f}'.format(n, num_comps, tempo_total)
@@ -37,11 +36,11 @@ def executa_teste(arqteste, arqsaida, nlin, intervalo):
     f.close()
     shutil.move("tBolha.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha.dat")
 
-#executa_teste("testeGeneric.py", "tBolha.dat", 14, 2 ** np.arange(5,10))
+#executa_teste("testeGeneric.py", "tBolha.dat", 14, 2 ** np.arange(5,14))
 
 def plota_teste1(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
-    print("n: ",n,"\nc: ",c,"\nt: ",t)
+    #print("n: ",n,"\nc: ",c,"\nt: ",t)
 
     plt.plot(n, n ** 2, label='$n^2$')  ## custo esperado bubble Sort
     plt.plot(n, c, 'ro', label='bubble sort')
@@ -56,10 +55,10 @@ def plota_teste1(arqsaida):
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Número de comparações')
 
-    plt.savefig('relatorio/imagens/Bubble/bubble1.png')
+    plt.savefig('relatorio/imagens/Bubble/bubble_plot_1.png')
     plt.show()
 
-plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha.dat")
+#plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha.dat")
 
 def plota_teste2(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
@@ -100,8 +99,11 @@ def plota_teste3(arqsaida):
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('bubble3.png')
+    plt.savefig('relatorio/imagens/Bubble/bubble_plot_3.png')
     plt.show()
+
+#plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha.dat")
+
 
 def plota_teste4(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
