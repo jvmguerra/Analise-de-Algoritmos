@@ -1,6 +1,5 @@
 import numpy as np
 
-@profile
 def bubble_sort(a):
     """ Implementação do método da bolha """
     for i in range(len(a)):
@@ -10,5 +9,4 @@ def bubble_sort(a):
                 a[j] = a[j+1]
                 a[j+1] = t
 
-
-
+    print(a) 
