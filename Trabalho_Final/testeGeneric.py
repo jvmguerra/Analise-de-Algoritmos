@@ -1,7 +1,7 @@
 ##adicionei - Serve para importar arquivos em outro diretório
 
 import sys
-sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final')
+sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/Codigos/Bubble')
 
 from monitor import *
 

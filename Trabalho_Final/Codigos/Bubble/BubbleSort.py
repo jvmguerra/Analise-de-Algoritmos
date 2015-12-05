@@ -9,3 +9,5 @@ def bubble_sort(a):
                 t = a[j]
                 a[j] = a[j+1]
                 a[j+1] = t
+
+#    print(a)  O PRINT BUGA O TESTDRIVER

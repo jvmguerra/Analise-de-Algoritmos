@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.28)  4 SEP 2015 08:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.30)  5 DEC 2015 13:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**relatorio1.tex
-(./relatorio1.tex
+**RelatorioBubble.tex
+(./RelatorioBubble.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 3 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -692,10 +692,10 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 \f@ncyO@orf=\skip57
 )
 \@indexfile=\write3
-\openout3 = `relatorio1.idx'.
+\openout3 = `RelatorioBubble.idx'.
 
 
-Writing index file relatorio1.idx
+Writing index file RelatorioBubble.idx
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count119
 \lst@gtempboxa=\box28
@@ -724,8 +724,8 @@ Package: listings 2013/08/26 1.5b (Carsten Heinz)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-(./relatorio1.aux)
-\openout1 = `relatorio1.aux'.
+(./RelatorioBubble.aux)
+\openout1 = `RelatorioBubble.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 199.
 LaTeX Font Info:    ... okay on input line 199.
@@ -865,9 +865,9 @@ LaTeX Info: Redefining \ref on input line 199.
 LaTeX Info: Redefining \pageref on input line 199.
 LaTeX Info: Redefining \nameref on input line 199.
 
-(./relatorio1.out) (./relatorio1.out)
+(./RelatorioBubble.out) (./RelatorioBubble.out)
 \@outlinefile=\write4
-\openout4 = `relatorio1.out'.
+\openout4 = `RelatorioBubble.out'.
 
 \c@lstlisting=\count134
 
@@ -889,9 +889,9 @@ Package babel Info: Redefining portuges shorthand "|
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 203.
- (./relatorio1.lof)
+ (./RelatorioBubble.lof)
 \tf@lof=\write5
-\openout5 = `relatorio1.lof'.
+\openout5 = `RelatorioBubble.lof'.
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 204.
@@ -902,20 +902,20 @@ Package babel Info: Redefining portuges shorthand "|
 ]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 204.
- (./relatorio1.lot)
+
+(./RelatorioBubble.lot)
 \tf@lot=\write6
-\openout6 = `relatorio1.lot'.
+\openout6 = `RelatorioBubble.lot'.
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 205.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 205.
+ [3
 
-[3
-
-] (./relatorio1.lol)
+] (./RelatorioBubble.lol)
 \tf@lol=\write7
-\openout7 = `relatorio1.lol'.
+\openout7 = `RelatorioBubble.lol'.
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 210.
@@ -923,15 +923,15 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 210.
  [4
 
-] (./relatorio1.toc)
+] (./RelatorioBubble.toc)
 \tf@toc=\write8
-\openout8 = `relatorio1.toc'.
+\openout8 = `RelatorioBubble.toc'.
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 220.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 220.
- [5
+[5
 
 ]
 Cap\'{\i }tulo 1.
@@ -1002,7 +1002,7 @@ Overfull \hbox (35.3747pt too wide) in paragraph at lines 297--297
 [][][][][][][] 
  []
 
-(./codigos/bolha.py)
+(../../Codigos/Bubble/BubbleSort.py)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1017,19 +1017,19 @@ Package babel Info: Redefining portuges shorthand "|
 Cap\'{\i }tulo 2.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 302.
-<imagens/bolha1.png, id=175, 578.16pt x 433.62pt>
-File: imagens/bolha1.png Graphic file (type png)
- <use imagens/bolha1.png>
-Package pdftex.def Info: imagens/bolha1.png used on input line 317.
+<../imagens/bolha1.png, id=176, 578.16pt x 433.62pt>
+File: ../imagens/bolha1.png Graphic file (type png)
+
+<use ../imagens/bolha1.png>
+Package pdftex.def Info: ../imagens/bolha1.png used on input line 317.
 (pdftex.def)             Requested size: 289.07928pt x 216.80946pt.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 323.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 323.
+ [8
 
-[8
-
- <./imagens/bolha1.png>]
+ <../imagens/bolha1.png>]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 323.
@@ -1081,7 +1081,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 393--393
 [][][][][][][] 
  []
 
-(./codigos/testdriver.py
+(../../testdriver.py
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 34.
 Package babel Info: Redefining portuges shorthand "|
@@ -1105,39 +1105,40 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 396.
  [14]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 396.
- (./relatorio1.aux)
+ (./RelatorioBubble.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 396.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 396.
-Package rerunfilecheck Info: File `relatorio1.out' has not changed.
+Package rerunfilecheck Info: File `RelatorioBubble.out' has not changed.
 (rerunfilecheck)             Checksum: D0F1E4A7730E200DD331BA109EDBB55F;638.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 396.
  ) 
 Here is how much of TeX's memory you used:
- 14938 strings out of 495004
- 212375 string characters out of 6180662
+ 14944 strings out of 495004
+ 212615 string characters out of 6180662
  508123 words of memory out of 5000000
- 17633 multiletter control sequences out of 15000+600000
+ 17637 multiletter control sequences out of 15000+600000
  26970 words of font info for 68 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 41i,12n,67p,386b,2365s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/alex/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/al
-ex/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/alex/.texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/alex/.texmf-var/fonts/pk/l
-jfour/jknappen/ec/ecbx1000.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips
-/base/8r.enc} </home/alex/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk
-> </home/alex/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/ale
-x/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/alex/.texmf-var
-/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/alex/.texmf-var/fonts/pk/lj
-four/jknappen/ec/ecrm1200.600pk> </home/alex/.texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecbx2488.600pk> </home/alex/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm144
-0.600pk> </home/alex/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on relatorio1.pdf (14 pages, 196730 bytes).
+ 41i,12n,67p,391b,2365s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/gmarson/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home
+/gmarson/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/gmarson/
+.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/gmarson/.texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk>{/usr/share/texlive/texmf-dist/fon
+ts/enc/dvips/base/8r.enc} </home/gmarson/.texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecbx1728.600pk> </home/gmarson/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800
+.600pk> </home/gmarson/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <
+/home/gmarson/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/gma
+rson/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/gmarson/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/gmarson/.texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/gmarson/.texmf-var/fonts/pk/lj
+four/jknappen/ec/ecrm2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/latxfont/lcircle1.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
+r8a.pfb>
+Output written on RelatorioBubble.pdf (14 pages, 202189 bytes).
 PDF statistics:
- 790 PDF objects out of 1000 (max. 8388607)
- 462 compressed objects within 5 object streams
- 255 named destinations out of 1000 (max. 500000)
+ 805 PDF objects out of 1000 (max. 8388607)
+ 463 compressed objects within 5 object streams
+ 256 named destinations out of 1000 (max. 500000)
  94 words of extra memory for PDF output out of 10000 (max. 10000000)
 
