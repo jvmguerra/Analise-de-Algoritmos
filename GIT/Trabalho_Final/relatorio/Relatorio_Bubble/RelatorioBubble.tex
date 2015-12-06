@@ -1,0 +1,410 @@
+\documentclass[12pt,a4paper,twoside]{report}
+% -------------------------------------------------------------------- %
+% Pacotes
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[fixlanguage]{babelbib}
+\usepackage[pdftex]{graphicx}      % usamos arquivos pdf/png como figuras
+\usepackage{setspace}              % espaçamento flexvel
+\usepackage{indentfirst}           % indentação do primeiro parágrafo
+\usepackage{makeidx}               % índice remissivo
+\usepackage[nottoc]{tocbibind}     % acrescentamos a bibliografia/indice/conteudo no Table of Contents
+\usepackage{courier}               % usa o Adobe Courier no lugar de Computer Modern Typewriter
+\usepackage{type1cm}               % fontes realmente escaláveis
+\usepackage{titletoc}
+\usepackage{ucs}
+\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage[a4paper,top=2.54cm,bottom=2.0cm,left=2.0cm,right=2.54cm]{geometry} % margens
+\usepackage{amsmath} 
+
+\usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=DarkGreen,
+linkcolor=NavyBlue,urlcolor=DarkRed,filecolor=green,bookmarksopen=true]{hyperref} % links coloridos
+\usepackage[all]{hypcap}                % soluciona o problema com o hyperref e capítulos
+\usepackage[square,sort,nonamebreak,comma]{natbib}  % citação bibliográfica alpha
+\fontsize{60}{62}\usefont{OT1}{cmr}{m}{n}{\selectfont}
+\usepackage{upquote}                    % formata apóstrofes '
+\usepackage{textcomp}
+
+% Para formatar corretamente as URLs
+\usepackage{url}
+% -------------------------------------------------------------------- %
+% Cabeçalhos similares ao TAOCP de Donald E. Knuth
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{#1}}{}}
+\renewcommand{\headrulewidth}{0pt}
+
+% -------------------------------------------------------------------- %
+\graphicspath{{./imagens/}}        % caminho das figuras
+\frenchspacing                     % arruma o espaço: id est (i.e.) e exempli gratia (e.g.)
+\urlstyle{same}                    % URL com o mesmo estilo do texto e no mono-spaced
+\makeindex                         % para o índice remissivo
+\raggedbottom                      % para no permitir espaços extras no texto
+\fontsize{60}{62}\usefont{OT1}{cmr}{m}{n}{\selectfont}
+\cleardoublepage
+\normalsize
+
+% -------------------------------------------------------------------- %
+% Cores para formatação de código
+\usepackage{color}
+\definecolor{vermelho}{rgb}{0.6,0,0} % para strings
+\definecolor{verde}{rgb}{0.25,0.5,0.35} % para comentários
+\definecolor{roxo}{rgb}{0.5,0,0.35} % para palavras-chaves
+\definecolor{azul}{rgb}{0.25,0.35,0.75} % para strings
+\definecolor{cinza-claro}{gray}{0.95}
+% -------------------------------------------------------------------- %
+% Opções de listagem usados para o código fonte
+% Ref: http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
+
+
+
+\usepackage{listings}           % para formatar código-fonte (ex. em Java)
+
+
+\lstset{ %
+language=Python,                      % seleciona a linguagem do código
+basicstyle=\footnotesize\ttfamily,    % o tamanho da fonte usado no código
+commentstyle=\color{verde}\bfseries,  % formatação de comentários
+stringstyle=\color{azul},             % formatação de strings
+upquote=true,
+numbers=left,                   % onde colocar os números de linha
+numberstyle=\tiny,  % o tamanho da fonte usada para a numeração das linhas
+stepnumber=1,                   % o intervalo entre dois números de linhas. Se for 1, numera cada uma.
+numbersep=5pt,                  % how far the line-numbers are from the code
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+keywordstyle=\color{roxo}\bfseries,
+keywordstyle=[1]\color{roxo}\bfseries,
+keywordstyle=[2]\color{verde}\bfseries,
+frame=b,                   % adds a frame around the code
+framerule=0.6pt,
+tabsize=2,                      % sets default tabsize to 2 spaces
+captionpos=t,                   % sets the caption-position to top
+breaklines=true,                % sets automatic line breaking
+breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)},         % if you want to add a comment within your code
+backgroundcolor=\color[rgb]{1.0,1.0,1.0}, % choose the background color.
+rulecolor=\color[rgb]{0.8,0.8,0.8},
+extendedchars=true,
+xleftmargin=10pt,
+xrightmargin=10pt,
+framexleftmargin=10pt,
+framexrightmargin=10pt,
+literate={â}{{\^{a}}}1  % para formatar corretamente os acentos do Português ao usar utf8
+    {ê}{{\^{e}}}1
+    {ô}{{\^{o}}}1  
+    {Â}{{\^{A}}}1
+    {Ê}{{\^{E}}}1
+    {Ô}{{\^{O}}}1
+    {á}{{\'{a}}}1
+    {é}{{\'{e}}}1
+    {í}{{\'{i}}}1
+    {ó}{{\'{o}}}1
+    {ú}{{\'{u}}}1
+    {Á}{{\'{A}}}1
+    {É}{{\'{E}}}1
+    {Í}{{\'{I}}}1
+    {Ó}{{\'{O}}}1
+    {Ú}{{\'{U}}}1
+    {à}{{\`{a}}}1
+    {À}{{\`{A}}}1
+    {ã}{{\~{a}}}1
+    {õ}{{\~{o}}}1
+    {Ã}{{\~{A}}}1
+    {Õ}{{\~{O}}}1
+    {ç}{{\c{c}}}1
+    {Ç}{{\c{C}}}1
+    {ü}{{\"u}}1
+    {Ü}{{\"U}}1
+}
+
+\renewcommand{\lstlistingname}{Listagem}
+\renewcommand{\lstlistlistingname}{Lista de Listagens}
+
+% Definição de novos estilos
+\lstdefinestyle{Bash}
+    {language=bash,frame=single,numbers=none,basicstyle=\footnotesize\ttfamily,
+     morekeywords={cp,mkdir,sudo,tar}}
+
+% Definição de novos ambientes
+\lstnewenvironment{terminal}
+  {\lstset{style=Bash}}
+  {}
+
+\lstnewenvironment{python}
+  {\lstset{basicstyle=\scriptsize\ttfamily,
+           frame=single,
+           frameround=tttt,
+           framerule=2pt,
+           numbers=none,
+           rulecolor=\color{Salmon}}}
+  {}
+
+\lstnewenvironment{ide}
+  {\lstset{frame=single,
+            frameround=tttt,
+            numbers=none,
+            basicstyle=\ttfamily,
+            framerule=2pt,
+            rulecolor=\color{CadetBlue}}}
+  {}
+
+\lstnewenvironment{latex}
+   {\lstset{language=[LaTex]TeX,
+            basicstyle=\scriptsize\ttfamily,
+            frame=none,
+            numbers=none}}
+   {}
+
+
+% Formata o caption da listagem
+% \DeclareCaptionFont{blue}{\color{blue}} 
+
+% \captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+\newcommand{\ListingsPath}{./codigos}
+% Inclui o nome do arquivo como Caption 
+\newcommand{\filelisting}[2][]{%
+    \lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{\ListingsPath/#2}%
+}
+
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+
+\title{Análise de Complexidade de Tempo do Método Bubble Sort}
+\date{}
+\author{Eduardo Costa de Paiva \\
+\texttt{\small \url{eduardocspv@gmail.com}}\\
+Frederico Franco Calhau \\
+\texttt{\small \url{fredericoffc@gmail.com}}\\
+Gabriel Augusto Marson \\
+\texttt{\small \url{gabrielmarson@live.com}}\\
+\vspace{1cm} \\
+Faculdade de Computação \\
+Universidade Federal de Uberlândia
+}
+\date{\today}
+
+\begin{document}
+  \maketitle
+% -------------------------------------------------------------------- %
+% Listas de figuras, tabelas e códigos criadas automaticamente
+\listoffigures            
+\listoftables            
+\lstlistoflistings
+% -------------------------------------------------------------------- %
+
+% -------------------------------------------------------------------- %
+% Sumário
+\tableofcontents    
+
+% Capítulos do trabalho
+
+% cabeçalho para as páginas de todos os capítulos
+\fancyhead[RE,LO]{\thesection}
+
+%\singlespacing              % espaçamento simples
+\setlength{\parskip}{0.15in} % espaçamento entre paragráfos
+
+\chapter{Introdução}
+Este documento foi feito com o intuito de exibir uma análise do algoritmo Bubble Sort 
+com relação a tempo. Além disso, será feita uma comparação da curva de tempo do que se espera do
+algoritmo, ou seja, $O(n^2)$ com o caso prático. 
+
+\section{Diretório}
+
+Dada a seguinte organização das pastas, utilizamos o arquivo testdriver.py,  executando, uma função conveniente por vez. Para mais informações vá até ao apêndice.
+
+OBS.: É necessário instalar o programa tree pelo terminal. Isso pode ser feito da seguinte maneira.
+
+\begin{terminal}
+> sudo apt-get install tree
+\end{terminal}
+
+A seguir é mostrada a organização das pastas sendo que os diretórios significativas para o projeto são Codigos e Relatorio além do raíz:
+\begin{terminal}
+tree --charset=ASCII
+.
+|-- Codigos
+|   |-- Bubble
+|   |   |-- BubbleSort.py
+|   |   `-- __pycache__
+|   |       |-- BubbleSort.cpython-34.pyc
+|   |       `-- testeBubble.cpython-34.pyc
+|   `-- README.md
+|-- memoria.py
+|-- monitor.py
+|-- Other
+|   |-- expfit0.py
+|   |-- expfit.py
+|   |-- leialprof.py
+|   |-- leitura1.py
+|   |-- leitura2.py
+|   |-- leitura.py
+|   `-- logfit.py
+|-- Plot
+|   |-- plot1.py
+|   |-- plot2.py
+|   |-- plot3.py
+|   `-- plot_tempo.py
+|-- __pycache__
+|   |-- monitor.cpython-34.pyc
+|   `-- tempo.cpython-34.pyc
+|-- relatorio
+|   |-- imagens
+|   |   |-- Bubble
+|   |   |   |-- bubble_plot_1.png
+|   |   |   `-- bubble_plot_3.png
+|   |   `-- Merge
+|   |-- Relatorio_Bubble
+|   |   |-- RelatorioBubble.aux
+|   |   |-- RelatorioBubble.idx
+|   |   |-- RelatorioBubble.lof
+|   |   |-- RelatorioBubble.log
+|   |   |-- RelatorioBubble.lol
+|   |   |-- RelatorioBubble.lot
+|   |   |-- RelatorioBubble.out
+|   |   |-- RelatorioBubble.tex
+|   |   `-- RelatorioBubble.toc
+|   |-- Relatorio_Merge
+|   `-- Resultados
+|       |-- Bubble
+|       |   `-- tBolha.dat
+|       `-- Merge
+|-- tempo.py
+|-- testdriver.py
+|-- testeGeneric.py
+`-- testeGeneric.py.lprof
+
+15 directories, 35 files
+
+\end{terminal}
+
+\section{Códigos de programas}
+Seguem os códigos utilizados na análise de tempo do algoritmo Bubble Sort.
+\begin{enumerate}
+
+\item BubbleSort.py:
+Disponível na Listagem~\ref{arq:BubbleSort}.
+\lstinputlisting[caption={BubbleSort.py \label{arq:BubbleSort}}]{../../Codigos/Bubble/BubbleSort.py}
+
+\item testeGeneric.py
+Disponível na Listagem ~\ref{arq:testeGeneric}
+\lstinputlisting[caption={testeGeneric.py \label{arq:testeGeneric}}]{../../testeGeneric.py}
+
+\item monitor.py
+Disponível na Listagem~\ref{arq:monitor}
+\lstinputlisting[caption={monitor.py \label{arq:monitor}}]{../../monitor.py}
+
+
+\item testdriver.py
+ Referenciado no apêndice~\ref{ap:testdriver}.
+\end{enumerate}
+
+
+\chapter{Imagens}
+
+Se desejar incluir imagens você poderá usar o comando a seguir:
+
+\begin{latex}
+\begin{figure}[!ht]
+\centering
+\includegraphics[scale=0.5]{imagens/bolha1.png}
+\caption{Complexidade de tempo do método da bolha \label{fig:1}}
+\end{figure}
+\end{latex}
+
+O comando anterior gerará a imagem a seguir, dado que o arquivo \texttt{fig1.png} esteja no subdiretório \texttt{imagens}.
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.5]{../imagens/Bubble/bubble_plot_1.png}
+\caption{Complexidade de tempo do método da bolha \label{fig:1}}
+\end{figure}
+
+Note que a Figura~\ref{fig:1} pode ser referenciada em qualquer parte do documento.  Você também pode incluir diretamente outros formatos de imagens tais como o \texttt{jpg}.
+
+\chapter{Tabelas}
+
+Aqui vão alguns exemplos de criação de tabelas.
+
+Vamos criar uma tabela simples com o código a seguir. O resultado é a 
+Tabela~\ref{tab:opcode1}
+
+\begin{latex}
+\begin{table}[h]
+  \centering
+  \caption{Alguns opcodes do Dalvik \label{tab:opcode1}}
+  \begin{tabular}{lll} \hline
+  {\bf Opcode (hex)} & {\bf Nome do opcode} & {\bf Explicação} \\ \hline
+  00 & nop & Somente gasta alguns ciclos do processador \\ \hline
+  01 & move vx, vy & Move o conteúdo de vy em vx. Ambos os registradores
+   devem estar no intervalo de 0 a 255 \\\hline
+  \end{tabular}
+\end{table}
+\end{latex}
+
+\begin{table}[h]
+  \centering
+  \caption{Alguns opcodes do Dalvik \label{tab:opcode1}}
+  \begin{tabular}{lll} \hline
+  {\bf Opcode (hex)} & {\bf Nome do opcode} & {\bf Explicação} \\ \hline
+  00 & nop & Somente gasta alguns ciclos do processador \\ \hline
+  01 & move vx, vy & Move o conteúdo de vy em vx. Ambos os registradores
+   devem estar no intervalo de 0 a 255 \\\hline
+  \end{tabular}
+\end{table}
+
+Note que o texto sob a coluna \texttt{Explicação} é muito longo e a
+tabela~\ref{tab:opcode1} ficou mal formatada. Podemos resolver esse problema
+usando colunas de largura fixa, conforme mostrado no código a seguir e cujo
+resultado é a tabela~\ref{tab:opcode2}.
+
+\begin{latex}
+\begin{table}[h]
+  \centering
+  \caption{Alguns opcodes do Dalvik \label{tab:opcode2}}
+  \begin{tabular}{p{1.5cm}lp{9cm}} \hline
+  {\bf Opcode (hex)} & {\bf Nome do opcode} & {\bf Explicação} \\ \hline
+  00 & nop & Somente gasta alguns ciclos do processador \\ \hline
+  01 & move vx, vy & Move o conteúdo de vy em vx. Ambos os registradores
+   devem estar no intervalo de 0 a 255 \\\hline
+  \end{tabular}
+\end{table}
+\end{latex}
+
+\begin{table}[h]
+  \centering
+  \caption{Alguns opcodes do Dalvik \label{tab:opcode2}}
+  \begin{tabular}{p{1.5cm}lp{9cm}} \hline
+  {\bf Opcode (hex)} & {\bf Nome do opcode} & {\bf Explicação} \\ \hline
+  00 & nop & Somente gasta alguns ciclos do processador \\ \hline
+  01 & move vx, vy & Move o conteúdo de vy em vx. Ambos os registradores
+   devem estar no intervalo de 0 a 255 \\\hline
+  \end{tabular}
+\end{table}
+
+\chapter{Citações e referências bibliográficas}
+Todas as fontes usadas para a confecção de seu relatório devem ser citadas. Isso
+inclui livros e documentos da internet, tais como tutoriais e páginas.
+
+\clearpage
+\addcontentsline{toc}{part}{Apêndice}
+\appendix
+
+\chapter{Códigos extensos \label{ap:testdriver}}
+\section{testdriver.py}
+\lstinputlisting[label= {arq:testdriver.py}, caption={testdriver.py}] {../../testdriver.py}
+
+
+\end{document} 
