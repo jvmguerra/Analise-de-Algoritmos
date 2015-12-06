@@ -4,7 +4,12 @@ import matplotlib.pyplot as plt
 import sys , shutil
 
 
-##PRA CADA NOVO METODO TEM QUE MUDAR a chamada das funções, o shutil.move(), e o savefig
+##PRA CADA NOVO METODO TEM QUE MUDAR
+#Sys.path()
+
+## PARA CADA VETOR NOVO OU NOVO MÉTODO TEM QUE MUDAR
+#Para o executa_teste a chamada das funções e o shutil.move()
+#para os plots        a chamada das funções e o savefig
 
 sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/Codigos/Bubble')  ## adicionei o código de ordenação
 sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble') ## adicionei o resultado do executa_teste
@@ -34,14 +39,14 @@ def executa_teste(arqteste, arqsaida, nlin, intervalo):
         print(str_res)
         f.write(str_res + '\n')
     f.close()
-    shutil.move("tBolha.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha.dat")
+    shutil.move("tBolha_vetor_parcialmente_ordenado_decrescente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha_vetor_parcialmente_ordenado_decrescente.dat")
 
-#executa_teste("testeGeneric.py", "tBolha.dat", 14, 2 ** np.arange(5,14))
+#executa_teste("testeGeneric.py", "tBolha_vetor_parcialmente_ordenado_decrescente.dat", 14, 2 ** np.arange(5,15))
 
 def plota_teste1(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
     #print("n: ",n,"\nc: ",c,"\nt: ",t)
-
+    #n eh o tamanho da entrada , c eh o tanto de comparações e t eh o tempo gasto
     plt.plot(n, n ** 2, label='$n^2$')  ## custo esperado bubble Sort
     plt.plot(n, c, 'ro', label='bubble sort')
 
@@ -49,16 +54,16 @@ def plota_teste1(arqsaida):
     plt.legend(loc='upper left')
 
     # Posiciona o título
-    plt.title('Análise da complexidade de \ntempo do método da bolha')
+    plt.title('Análise de comparações do método da bolha')
 
     # Rotula os eixos
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Número de comparações')
 
-    plt.savefig('relatorio/imagens/Bubble/bubble_plot_1.png')
+    plt.savefig('relatorio/imagens/Bubble/bubble_plot_1_parcialmente_ordenado_decrescente.png')
     plt.show()
 
-#plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha.dat")
+
 
 def plota_teste2(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
@@ -75,8 +80,11 @@ def plota_teste2(arqsaida):
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('bubble2.png')
+    plt.savefig('relatorio/imagens/Bubble/bubble_plot_2_parcialmente_ordenado_decrescente.png')
     plt.show()
+
+
+
 
 def plota_teste3(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
@@ -93,16 +101,18 @@ def plota_teste3(arqsaida):
     plt.legend(loc='upper left')
 
     # Posiciona o título
-    plt.title('Análise da complexidade de \ntempo do método da bolha')
+    plt.title('Análise da complexidade de \ntempo do método da bolha com mínimos quadrados')
 
     # Rotula os eixos
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Bubble/bubble_plot_3.png')
+    plt.savefig('relatorio/imagens/Bubble/bubble_plot_3_parcialmente_ordenado_decrescente.png')
     plt.show()
 
-#plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha.dat")
+plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha_vetor_parcialmente_ordenado_decrescente.dat")
+plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha_vetor_parcialmente_ordenado_decrescente.dat")
+plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bubble/tBolha_vetor_parcialmente_ordenado_decrescente.dat")
 
 
 def plota_teste4(arqsaida):

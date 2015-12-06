@@ -11,21 +11,21 @@ import numpy as np
 from tempo import *
 
 # Vetores de teste
-def troca(m,v,n): ## seleciona o nível de embaralhamento do vetor 
+def troca(m,v,n): ## seleciona o nível de embaralhamento do vetor
     m = trunc(m)
     mi = (n-m)//2
     mf = (n+m)//2
     for num in range(mi,mf):
         i = np.random.randint(mi,mf)
         j = np.random.randint(mi,mf)
-        print("i= ", i, " j= ", j)
+        #print("i= ", i, " j= ", j)
         t = v[i]
         v[i] = v[j]
         v[j] = t
     return v
 
 
-def criavet(n, grau=0, inf=-1000, sup=1000):
+def criavet(n, grau=-0.5, inf=-1000, sup=1000):
     passo = (sup - inf)/n
     if grau < 0.0:
         v = np.arange(sup, inf, -passo)
@@ -41,6 +41,15 @@ def criavet(n, grau=0, inf=-1000, sup=1000):
             return troca(grau*n, v, n)
     else:
         return np.random.randint(inf, sup, size=n)
+
+#print(criavet(20))
+
+#Tipo                                        grau
+#aleatorio                                   0
+#ordenado crescente                          1
+#ordenado decresente                         -1
+#parcialmente ordenado crescente             0.5
+#parcialmente ordenado descrescente          -0.5
 
 
 def executa(fn, v):
