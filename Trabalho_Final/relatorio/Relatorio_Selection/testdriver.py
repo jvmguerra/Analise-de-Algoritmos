@@ -39,9 +39,9 @@ def executa_teste(arqteste, arqsaida, nlin, intervalo):
         print(str_res)
         f.write(str_res + '\n')
     f.close()
-    shutil.move("tSelection_vetor_ordenado_descresente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
+    shutil.move("tSelection_vetor_aleatorio.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_aleatorio.dat")
 
-#executa_teste("testeGeneric.py", "tSelection_vetor_ordenado_descresente.dat", 14, 2 ** np.arange(5,15))
+#executa_teste("testeGeneric.py", "tSelection_vetor_aleatorio.dat", 14, 2 ** np.arange(5,15))
 
 def plota_teste1(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
@@ -60,7 +60,7 @@ def plota_teste1(arqsaida):
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Número de comparações')
 
-    plt.savefig('relatorio/imagens/Selection/selection_plot_1_ordenado_descresente.png')
+    plt.savefig('relatorio/imagens/Selection/selection_plot_1_aleatorio.png')
     plt.show()
 
 
@@ -80,7 +80,7 @@ def plota_teste2(arqsaida):
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Selection/selection_plot_2_ordenado_descresente.png')
+    plt.savefig('relatorio/imagens/Selection/selection_plot_2_aleatorio.png')
     plt.show()
 
 
@@ -107,12 +107,12 @@ def plota_teste3(arqsaida):
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Selection/selection_plot_3_ordenado_descresente.png')
+    plt.savefig('relatorio/imagens/Selection/selection_plot_3_aleatorio.png')
     plt.show()
 
-plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
-plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
-plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
+plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_aleatorio.dat")
+plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_aleatorio.dat")
+plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_aleatorio.dat")
 
 
 def plota_teste4(arqsaida):

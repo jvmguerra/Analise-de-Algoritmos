@@ -11,8 +11,8 @@ import sys , shutil
 #Para o executa_teste a chamada das funções e o shutil.move()
 #para os plots        a chamada das funções e o savefig
 
-sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/Codigos/Selection')  ## adicionei o código de ordenação
-sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection') ## adicionei o resultado do executa_teste
+sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/Codigos/Insertion')  ## adicionei o código de ordenação
+sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Insertion') ## adicionei o resultado do executa_teste
 
 
 def executa_teste(arqteste, arqsaida, nlin, intervalo):
@@ -39,28 +39,28 @@ def executa_teste(arqteste, arqsaida, nlin, intervalo):
         print(str_res)
         f.write(str_res + '\n')
     f.close()
-    shutil.move("tSelection_vetor_ordenado_descresente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
+    shutil.move("tInsertion_vetor_aleatorio.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Insertion/tInsertion_vetor_aleatorio.dat")
 
-#executa_teste("testeGeneric.py", "tSelection_vetor_ordenado_descresente.dat", 14, 2 ** np.arange(5,15))
+#executa_teste("testeGeneric.py", "tInsertion_vetor_aleatorio.dat", 14, 2 ** np.arange(5,15))
 
 def plota_teste1(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
     #print("n: ",n,"\nc: ",c,"\nt: ",t)
     #n eh o tamanho da entrada , c eh o tanto de comparações e t eh o tempo gasto
     plt.plot(n, n ** 2, label='$n^2$')  ## custo esperado bubble Sort
-    plt.plot(n, c, 'ro', label='selection sort')
+    plt.plot(n, c, 'ro', label='insertion sort')
 
     # Posiciona a legenda
     plt.legend(loc='upper left')
 
     # Posiciona o título
-    plt.title('Análise de comparações do método da seleção')
+    plt.title('Análise de comparações do método da inserção')
 
     # Rotula os eixos
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Número de comparações')
 
-    plt.savefig('relatorio/imagens/Selection/selection_plot_1_ordenado_descresente.png')
+    plt.savefig('relatorio/imagens/Insertion/insertion_plot_1_aleatorio.png')
     plt.show()
 
 
@@ -68,19 +68,19 @@ def plota_teste1(arqsaida):
 def plota_teste2(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
     plt.plot(n, n ** 2, label='$n^2$')
-    plt.plot(n, t, 'ro', label='selection sort')
+    plt.plot(n, t, 'ro', label='insertion sort')
 
     # Posiciona a legenda
     plt.legend(loc='upper left')
 
     # Posiciona o título
-    plt.title('Análise da complexidade de \ntempo do método da seleção')
+    plt.title('Análise da complexidade de \ntempo do método da inserção')
 
     # Rotula os eixos
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Selection/selection_plot_2_ordenado_descresente.png')
+    plt.savefig('relatorio/imagens/Insertion/insertion_plot_2_aleatorio.png')
     plt.show()
 
 
@@ -95,24 +95,24 @@ def plota_teste3(arqsaida):
     p = np.poly1d(coefs)
 
     plt.plot(n, p(n), label='$n^2$')
-    plt.plot(n, t, 'ro', label='selection sort')
+    plt.plot(n, t, 'ro', label='insertion sort')
 
     # Posiciona a legenda
     plt.legend(loc='upper left')
 
     # Posiciona o título
-    plt.title('Análise da complexidade de \ntempo do método da seleção com mínimos quadrados')
+    plt.title('Análise da complexidade de \ntempo do método da inserção com mínimos quadrados')
 
     # Rotula os eixos
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Selection/selection_plot_3_ordenado_descresente.png')
+    plt.savefig('relatorio/imagens/Insertion/insertion_plot_3_aleatorio.png')
     plt.show()
 
-plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
-plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
-plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
+plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Insertion/tInsertion_vetor_aleatorio.dat")
+plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Insertion/tInsertion_vetor_aleatorio.dat")
+plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Insertion/tInsertion_vetor_aleatorio.dat")
 
 
 def plota_teste4(arqsaida):

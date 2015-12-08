@@ -1,3 +1,6 @@
+import numpy as np
+
+@profile
 def insertionSort(lista):
 	for j in range(1,len(lista)):
 		chave = lista[j]
@@ -7,6 +10,6 @@ def insertionSort(lista):
 			i = i-1
 		lista[i] = chave
 
-lista = [60,20,30,12,1,2,3,39,45,10]
-insertionSort(lista)
-print(lista)
+#lista = [60,20,30,12,1,2,3,39,45,10]
+#insertionSort(lista)
+#print(lista)
