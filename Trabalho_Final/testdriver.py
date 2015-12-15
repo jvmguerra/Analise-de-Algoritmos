@@ -29,19 +29,50 @@ def executa_teste(arqteste, arqsaida, nlin, intervalo):
         cmd = ' '.join(["kernprof -l -v", "testeGeneric.py", str(n)])
         str_saida = subprocess.check_output(cmd, shell=True).decode('utf-8')
         linhas = str_saida.split('\n')
-        unidade_tempo = float(linhas[1].split()[2])
-        #print("CMD:", cmd, "\nSTR_SAIDA: ",str_saida,"\nLINHAS: ",linhas,"\nUNIDADE_TEMPO: ",unidade_tempo)
-        #print("Linhas4:",linhas[4]," ----->  Linhas 4 float: ",linhas[4].split()[2])
-        tempo_total = float(linhas[3].split()[2])
+        print (linhas)
+        #unidade_tempo = float(linhas[1].split()[2])
+        #tempo_total = float(linhas[3].split()[2])
         lcomp = linhas[nlin].split()
         num_comps = int(lcomp[1])
         str_res = '{:>8} {:>13} {:13.6f}'.format(n, num_comps, tempo_total)
         print(str_res)
         f.write(str_res + '\n')
     f.close()
-    shutil.move("tSelection_vetor_ordenado_descresente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
+    #shutil.move("tSelection_memoria.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_memoria.dat")
 
 #executa_teste("testeGeneric.py", "tSelection_vetor_ordenado_descresente.dat", 14, 2 ** np.arange(5,15))
+
+def executa_teste_memoria(arqteste, arqsaida, nlin, intervalo):
+    """Executa uma sequência de testes contidos em arqteste, com:
+       arqsaida: nome do arquivo de saída, ex: tBolha.dat
+       nlin: número da linha no arquivo gerado pelo line_profiler contendo
+             os dados de interesse. Ex: 14
+       intervalo: tamanhos dos vetores: Ex: 2 ** np.arange(5,10)
+    """
+    f = open(arqsaida,mode='w', encoding='utf-8')
+    f.write('#      n   comparações      tempo(s)\n')
+
+    for n in intervalo:
+        cmd = ' '.join(["kernprof -l -v ", "testeGeneric.py", str(n)])
+
+        str_saida = subprocess.check_output(cmd, shell=True).decode('utf-8')
+
+        linhas = str_saida.split('\n')
+        for i in linhas:
+            print(i)
+
+        print ("Linhas:",linhas[1])
+
+        unidade_tempo = float(linhas[1].split()[2])
+
+
+        str_res = '{:>8} {:>13} {:13.6f}'.format(n, n, n)
+        print(str_res)
+        f.write(str_res + '\n')
+    f.close()
+    #shutil.move("tSelection_memoria.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_memoria.dat")
+
+executa_teste_memoria("testeGeneric.py", "tSelection_memoria.dat", 14, 2 ** np.arange(5,15))
 
 def plota_teste1(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
@@ -110,9 +141,9 @@ def plota_teste3(arqsaida):
     plt.savefig('relatorio/imagens/Selection/selection_plot_3_ordenado_descresente.png')
     plt.show()
 
-plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
-plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
-plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
+#plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
+#plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
+#plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
 
 
 def plota_teste4(arqsaida):

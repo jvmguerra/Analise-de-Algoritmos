@@ -3,9 +3,10 @@
 
 import sys
 sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/Codigos/Selection')
+sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final')
 
 from monitor import *
-
+from memoria import *
 
 from SelectionSort import *
 import argparse

@@ -19,5 +19,5 @@ def quickSort(A,p,r):
 		quickSort(A,(q+1),r)
 
 A = [40, 12, 34, 1, 3, 5, 80]
-quickSort(A,0,6)
-print(A)
+#quickSort(A,0,6)
+#print(A)
