@@ -1,2 +1,3 @@
-# An-lise-de-Algoritmos
-Análise prática de algoritmos de ordenação
+ Trabalho final de Análise de Algoritmos
+
+	O trabalho consiste na implementação dos métodos de ordenação vistos em sala e relatórios contendo a análise de tempo e espaço destes.
