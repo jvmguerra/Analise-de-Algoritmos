@@ -237,57 +237,56 @@ A seguir é mostrada a organização das pastas sendo que os diretórios signifi
 tree --charset=ASCII
 .
 |-- Codigos
-|   |-- Heap
-|   |   |-- HeapSort.py
+|   |-- Bubble
 |   |   `-- __pycache__
-|   |       |-- HeapSort.cpython-34.pyc
-|   |       `-- testeHeap.cpython-34.pyc
-|   `-- README.md
-|-- memoria.py
-|-- monitor.py
+|   |-- Bucket
+|   |   `-- __pycache__
+|   |-- Counting
+|   |   `-- __pycache__
+|   |-- Heap
+|   |   `-- __pycache__
+|   |-- Insertion
+|   |   `-- __pycache__
+|   |-- Merge
+|   |   `-- __pycache__
+|   |-- Quick
+|   |   `-- __pycache__
+|   |-- Radix
+|   `-- Selection
+|       `-- __pycache__
 |-- Other
-|   |-- expfit0.py
-|   |-- expfit.py
-|   |-- leialprof.py
-|   |-- leitura1.py
-|   |-- leitura2.py
-|   |-- leitura.py
-|   `-- logfit.py
 |-- Plot
-|   |-- plot1.py
-|   |-- plot2.py
-|   |-- plot3.py
-|   `-- plot_tempo.py
 |-- __pycache__
-|   |-- monitor.cpython-34.pyc
-|   `-- tempo.cpython-34.pyc
-|-- relatorio
-|   |-- imagens
-|   |   |-- Heap
-|   |   |   |-- heap_plot_1.png
-|   |   |   `-- heap_plot_3.png
-|   |   `-- Merge
-|   |-- Relatorio_Heap
-|   |   |-- RelatorioHeap.aux
-|   |   |-- RelatorioHeap.idx
-|   |   |-- RelatorioHeap.lof
-|   |   |-- RelatorioHeap.log
-|   |   |-- RelatorioHeap.lol
-|   |   |-- RelatorioHeap.lot
-|   |   |-- RelatorioHeap.out
-|   |   |-- RelatorioHeap.tex
-|   |   `-- RelatorioHeap.toc
-|   |-- Relatorio_Merge
-|   `-- Resultados
-|       |-- Heap
-|       |   `-- tBolha.dat
-|       `-- Merge
-|-- tempo.py
-|-- testdriver.py
-|-- testeGeneric.py
-`-- testeGeneric.py.lprof
+`-- relatorio
+    |-- imagens
+    |   |-- Bubble
+    |   |-- Bucket
+    |   |-- Counting
+    |   |-- Heap
+    |   |-- Insertion
+    |   |-- Merge
+    |   |-- Quick
+    |   |-- Radix
+    |   `-- Selection
+    |-- Relatorio_Bubble
+    |-- Relatorio_Bucket
+    |-- Relatorio_Counting
+    |-- Relatorio_Heap
+    |-- Relatorio_Insertion
+    |-- Relatorio_Merge
+    |-- Relatorio_Selection
+    `-- Resultados
+        |-- Bubble
+        |-- Bucket
+        |-- Counting
+        |-- Heap
+        |-- Insertion
+        |-- Merge
+        |-- Quick
+        `-- Selection
 
-15 directories, 35 files
+48 directories
+
 
 \end{terminal}
 
@@ -559,7 +558,7 @@ Seguem as tabelas utilizadas para a análise do método Heap Sort.
   \centering
   \caption{Vetor Parcialmente Ordenado Decrescente \label{tab:pod}}
   \begin{tabular}{ccc} \\\hline
-  \textbf{Tamanho do Vetor} & \textbf{Comparações} & \textbf{Tempo(s)} )} \\\hline
+  \textbf{Tamanho do Vetor} & \textbf{Comparações} & \textbf{Tempo(s)}  \\\hline
   32                        & 204                  & 0.002475          \\\hline
   64                        & 453                 & 0.005813          \\\hline
   128                       & 1361                 & 0.017676          \\\hline
