@@ -1,3 +1,4 @@
+@profile
 def Particiona(A,p,r):
 	x = A[r] #pivo é o último elemento
 	i = p-1
@@ -12,12 +13,16 @@ def Particiona(A,p,r):
 	A[r] = temp
 	return i+1
 
+@profile
 def quickSort(A,p,r):
 	if(p < r):
 		q = Particiona(A,p,r)
 		quickSort(A,p,(q-1))
 		quickSort(A,(q+1),r)
 
-A = [40, 12, 34, 1, 3, 5, 80]
+@profile
+def quick(A):
+	quickSort(A,A[0],A[-1])
+#A = [40, 12, 34, 1, 3, 5, 80]
 #quickSort(A,0,6)
 #print(A)

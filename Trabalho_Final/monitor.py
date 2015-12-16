@@ -25,7 +25,7 @@ def troca(m,v,n): ## seleciona o nível de embaralhamento do vetor
     return v
 
 
-def criavet(n, grau=-1, inf=-1000, sup=1000):
+def criavet(n, grau=-0.5, inf=0, sup=1000):
     passo = (sup - inf)/n
     if grau < 0.0:
         v = np.arange(sup, inf, -passo)

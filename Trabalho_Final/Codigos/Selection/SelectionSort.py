@@ -14,8 +14,8 @@ def selectionSort(A):
 		aux = A[i]
 		A[i] = A[minimo]
 		A[minimo] = aux
-	
 
-A = [40, 12, 34, 1, 3, 5, 80]
-selectionSort(A)
-print(A)
+
+#A = [40, 12, 34, 1, 3, 5, 80]
+#selectionSort(A)
+#print(A)

@@ -2,6 +2,7 @@ import math
 
 @profile
 def intercala(A,p,q,r):
+	B = [0] *len(A)
 	for i in range(p,(q+1)):
 		B[i] = A[i]
 	for j in range(q+1,(r+1)):
@@ -18,8 +19,11 @@ def intercala(A,p,q,r):
 			A[k] = B[j]
 			j = j-1
 
+@profile
+def merge(A):
+	mergeSort(A,A[0],A[-1])
 
-
+@profile
 def mergeSort(A,esquerda,direita):
 	if(esquerda<direita):
 		meio = math.floor((esquerda+direita)/2)
@@ -27,8 +31,10 @@ def mergeSort(A,esquerda,direita):
 		mergeSort(A,meio+1,direita)
 		intercala(A,esquerda,meio,direita)
 
-A = [3,20,52,2,54,23,17,18,1,4]
+
+
+
+#A = [3,20,52,2,54,23,17,18,1,4]
 #Para criar uma lista preenchida com 0's e que possua tamanho de A basta
-B = [0]*len(A)
-mergeSort(A,0,9)
-print(A)
+#merge(A)
+#print(A)
