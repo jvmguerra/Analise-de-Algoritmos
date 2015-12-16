@@ -9,8 +9,22 @@ def bucket_sort(floats):
 
     result = []
     for bucket in buckets:
-        bucket.sort() # INSERTION_SORT(bucket)
+        _insertion_sort(bucket)# INSERTION_SORT(bucket)
         result += bucket
     return result
+
+
+# colocamos a mesma versão do Insertion Sort, que já havíamos feito, aqui apenas
+# para facilitar a análise de complexidade do Bucket Sort
+@profile
+def _insertion_sort(lista):
+	for j in range(1,len(lista)):
+		chave = lista[j]
+		i = j
+		while (i>0 and lista[i-1]>chave):
+			lista[i] = lista[i-1]
+			i = i-1
+		lista[i] = chave
+
 
 #print(bucket_sort([0.112, 0.3, 0.008, 0.07, 0.9, 0.8, 0.43, 0.29]))

@@ -1,4 +1,3 @@
-import numpy as np
 
 @profile
 def insertionSort(lista):
