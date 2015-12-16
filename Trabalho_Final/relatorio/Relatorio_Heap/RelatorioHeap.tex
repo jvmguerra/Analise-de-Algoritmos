@@ -1,0 +1,602 @@
+\documentclass[12pt,a4paper,twoside]{report}
+% -------------------------------------------------------------------- %
+% Pacotes
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[fixlanguage]{babelbib}
+\usepackage[pdftex]{graphicx}      % usamos arquivos pdf/png como figuras
+\usepackage{setspace}              % espaçamento flexvel
+\usepackage{indentfirst}           % indentação do primeiro parágrafo
+\usepackage{makeidx}               % índice remissivo
+\usepackage[nottoc]{tocbibind}     % acrescentamos a bibliografia/indice/conteudo no Table of Contents
+\usepackage{courier}               % usa o Adobe Courier no lugar de Computer Modern Typewriter
+\usepackage{type1cm}               % fontes realmente escaláveis
+\usepackage{titletoc}
+\usepackage{ucs}
+\usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage[a4paper,top=2.54cm,bottom=2.0cm,left=2.0cm,right=2.54cm]{geometry} % margens
+\usepackage{amsmath} 
+
+\usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=DarkGreen,
+linkcolor=NavyBlue,urlcolor=DarkRed,filecolor=green,bookmarksopen=true]{hyperref} % links coloridos
+\usepackage[all]{hypcap}                % soluciona o problema com o hyperref e capítulos
+\usepackage[square,sort,nonamebreak,comma]{natbib}  % citação bibliográfica alpha
+\fontsize{60}{62}\usefont{OT1}{cmr}{m}{n}{\selectfont}
+\usepackage{upquote}                    % formata apóstrofes '
+\usepackage{textcomp}
+
+% Para formatar corretamente as URLs
+\usepackage{url}
+% -------------------------------------------------------------------- %
+% Cabeçalhos similares ao TAOCP de Donald E. Knuth
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{#1}}{}}
+\renewcommand{\headrulewidth}{0pt}
+
+% -------------------------------------------------------------------- %
+\graphicspath{{./imagens/}}        % caminho das figuras
+\frenchspacing                     % arruma o espaço: id est (i.e.) e exempli gratia (e.g.)
+\urlstyle{same}                    % URL com o mesmo estilo do texto e no mono-spaced
+\makeindex                         % para o índice remissivo
+\raggedbottom                      % para no permitir espaços extras no texto
+\fontsize{60}{62}\usefont{OT1}{cmr}{m}{n}{\selectfont}
+\cleardoublepage
+\normalsize
+
+% -------------------------------------------------------------------- %
+% Cores para formatação de código
+\usepackage{color}
+\definecolor{vermelho}{rgb}{0.6,0,0} % para strings
+\definecolor{verde}{rgb}{0.25,0.5,0.35} % para comentários
+\definecolor{roxo}{rgb}{0.5,0,0.35} % para palavras-chaves
+\definecolor{azul}{rgb}{0.25,0.35,0.75} % para strings
+\definecolor{cinza-claro}{gray}{0.95}
+% -------------------------------------------------------------------- %
+% Opções de listagem usados para o código fonte
+% Ref: http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
+
+
+
+\usepackage{listings}           % para formatar código-fonte (ex. em Java)
+
+
+\lstset{ %
+language=Python,                      % seleciona a linguagem do código
+basicstyle=\footnotesize\ttfamily,    % o tamanho da fonte usado no código
+commentstyle=\color{verde}\bfseries,  % formatação de comentários
+stringstyle=\color{azul},             % formatação de strings
+upquote=true,
+numbers=left,                   % onde colocar os números de linha
+numberstyle=\tiny,  % o tamanho da fonte usada para a numeração das linhas
+stepnumber=1,                   % o intervalo entre dois números de linhas. Se for 1, numera cada uma.
+numbersep=5pt,                  % how far the line-numbers are from the code
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+keywordstyle=\color{roxo}\bfseries,
+keywordstyle=[1]\color{roxo}\bfseries,
+keywordstyle=[2]\color{verde}\bfseries,
+frame=b,                   % adds a frame around the code
+framerule=0.6pt,
+tabsize=2,                      % sets default tabsize to 2 spaces
+captionpos=t,                   % sets the caption-position to top
+breaklines=true,                % sets automatic line breaking
+breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)},         % if you want to add a comment within your code
+backgroundcolor=\color[rgb]{1.0,1.0,1.0}, % choose the background color.
+rulecolor=\color[rgb]{0.8,0.8,0.8},
+extendedchars=true,
+xleftmargin=10pt,
+xrightmargin=10pt,
+framexleftmargin=10pt,
+framexrightmargin=10pt,
+literate={â}{{\^{a}}}1  % para formatar corretamente os acentos do Português ao usar utf8
+    {ê}{{\^{e}}}1
+    {ô}{{\^{o}}}1  
+    {Â}{{\^{A}}}1
+    {Ê}{{\^{E}}}1
+    {Ô}{{\^{O}}}1
+    {á}{{\'{a}}}1
+    {é}{{\'{e}}}1
+    {í}{{\'{i}}}1
+    {ó}{{\'{o}}}1
+    {ú}{{\'{u}}}1
+    {Á}{{\'{A}}}1
+    {É}{{\'{E}}}1
+    {Í}{{\'{I}}}1
+    {Ó}{{\'{O}}}1
+    {Ú}{{\'{U}}}1
+    {à}{{\`{a}}}1
+    {À}{{\`{A}}}1
+    {ã}{{\~{a}}}1
+    {õ}{{\~{o}}}1
+    {Ã}{{\~{A}}}1
+    {Õ}{{\~{O}}}1
+    {ç}{{\c{c}}}1
+    {Ç}{{\c{C}}}1
+    {ü}{{\"u}}1
+    {Ü}{{\"U}}1
+}
+
+\renewcommand{\lstlistingname}{Listagem}
+\renewcommand{\lstlistlistingname}{Lista de Listagens}
+
+% Definição de novos estilos
+\lstdefinestyle{Bash}
+    {language=bash,frame=single,numbers=none,basicstyle=\footnotesize\ttfamily,
+     morekeywords={cp,mkdir,sudo,tar}}
+
+% Definição de novos ambientes
+\lstnewenvironment{terminal}
+  {\lstset{style=Bash}}
+  {}
+
+\lstnewenvironment{python}
+  {\lstset{basicstyle=\scriptsize\ttfamily,
+           frame=single,
+           frameround=tttt,
+           framerule=2pt,
+           numbers=none,
+           rulecolor=\color{Salmon}}}
+  {}
+
+\lstnewenvironment{ide}
+  {\lstset{frame=single,
+            frameround=tttt,
+            numbers=none,
+            basicstyle=\ttfamily,
+            framerule=2pt,
+            rulecolor=\color{CadetBlue}}}
+  {}
+
+\lstnewenvironment{latex}
+   {\lstset{language=[LaTex]TeX,
+            basicstyle=\scriptsize\ttfamily,
+            frame=none,
+            numbers=none}}
+   {}
+
+
+% Formata o caption da listagem
+% \DeclareCaptionFont{blue}{\color{blue}} 
+
+% \captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+\newcommand{\ListingsPath}{./codigos}
+% Inclui o nome do arquivo como Caption 
+\newcommand{\filelisting}[2][]{%
+    \lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{\ListingsPath/#2}%
+}
+
+% ---------------------------------------------------------------------------- %
+
+% ---------------------------------------------------------------------------- %
+
+\title{Análise de Complexidade de Tempo do Método Heap Sort}
+\date{}
+\author{Eduardo Costa de Paiva \\
+\texttt{\small \url{eduardocspv@gmail.com}}\\
+Frederico Franco Calhau \\
+\texttt{\small \url{fredericoffc@gmail.com}}\\
+Gabriel Augusto Marson \\
+\texttt{\small \url{gabrielmarson@live.com}}\\
+\vspace{1cm} \\
+Faculdade de Computação \\
+Universidade Federal de Uberlândia
+}
+\date{\today}
+
+\begin{document}
+  \maketitle
+% -------------------------------------------------------------------- %
+% Listas de figuras, tabelas e códigos criadas automaticamente
+\listoffigures            
+\listoftables            
+\lstlistoflistings
+% -------------------------------------------------------------------- %
+
+% -------------------------------------------------------------------- %
+% Sumário
+\tableofcontents    
+
+% Capítulos do trabalho
+
+% cabeçalho para as páginas de todos os capítulos
+\fancyhead[RE,LO]{\thesection}
+
+%\singlespacing              % espaçamento simples
+\setlength{\parskip}{0.15in} % espaçamento entre paragráfos
+
+\chapter{Introdução}
+Este documento foi feito com o intuito de exibir uma análise do algoritmo Heap Sort 
+com relação a tempo. Além disso, será feita uma comparação da curva de tempo do que se espera do
+algoritmo, ou seja, $O(n lg n)$ com o caso prático. 
+
+\section{Diretório}
+
+Dada a seguinte organização das pastas, utilizamos o arquivo testdriver.py,  executando, uma função conveniente por vez. Para mais informações vá até ao apêndice.
+
+OBS.: É necessário instalar o programa tree pelo terminal. Isso pode ser feito da seguinte maneira.
+
+\begin{terminal}
+> sudo apt-get install tree
+\end{terminal}
+
+A seguir é mostrada a organização das pastas sendo que os diretórios significativas para o projeto são Codigos e Relatorio além do raíz:
+\begin{terminal}
+tree --charset=ASCII
+.
+|-- Codigos
+|   |-- Heap
+|   |   |-- HeapSort.py
+|   |   `-- __pycache__
+|   |       |-- HeapSort.cpython-34.pyc
+|   |       `-- testeHeap.cpython-34.pyc
+|   `-- README.md
+|-- memoria.py
+|-- monitor.py
+|-- Other
+|   |-- expfit0.py
+|   |-- expfit.py
+|   |-- leialprof.py
+|   |-- leitura1.py
+|   |-- leitura2.py
+|   |-- leitura.py
+|   `-- logfit.py
+|-- Plot
+|   |-- plot1.py
+|   |-- plot2.py
+|   |-- plot3.py
+|   `-- plot_tempo.py
+|-- __pycache__
+|   |-- monitor.cpython-34.pyc
+|   `-- tempo.cpython-34.pyc
+|-- relatorio
+|   |-- imagens
+|   |   |-- Heap
+|   |   |   |-- heap_plot_1.png
+|   |   |   `-- heap_plot_3.png
+|   |   `-- Merge
+|   |-- Relatorio_Heap
+|   |   |-- RelatorioHeap.aux
+|   |   |-- RelatorioHeap.idx
+|   |   |-- RelatorioHeap.lof
+|   |   |-- RelatorioHeap.log
+|   |   |-- RelatorioHeap.lol
+|   |   |-- RelatorioHeap.lot
+|   |   |-- RelatorioHeap.out
+|   |   |-- RelatorioHeap.tex
+|   |   `-- RelatorioHeap.toc
+|   |-- Relatorio_Merge
+|   `-- Resultados
+|       |-- Heap
+|       |   `-- tBolha.dat
+|       `-- Merge
+|-- tempo.py
+|-- testdriver.py
+|-- testeGeneric.py
+`-- testeGeneric.py.lprof
+
+15 directories, 35 files
+
+\end{terminal}
+
+\section{Códigos de programas}
+Seguem os códigos utilizados na análise de tempo do algoritmo Heap Sort.
+\begin{enumerate}
+
+\item HeapSort.py:
+Disponível na Listagem~\ref{arq:HeapSort}.
+\lstinputlisting[caption={HeapSort.py \label{arq:HeapSort}}]{../../Codigos/Heap/HeapSort.py}
+
+\item testeGeneric.py
+Disponível na Listagem ~\ref{arq:testeGeneric}
+\lstinputlisting[caption={testeGeneric.py \label{arq:testeGeneric}}]{../../testeGeneric.py}
+
+\item monitor.py
+Disponível na Listagem~\ref{arq:monitor}
+\lstinputlisting[caption={monitor.py \label{arq:monitor}}]{../../monitor.py}
+
+
+\item testdriver.py
+ Referenciado no apêndice~\ref{ap:testdriver}.
+\end{enumerate}
+
+
+\chapter{Gráficos}
+
+Seguem os Gráficos utilizadas no processo de análise do método Heap Sort:
+\begin{enumerate}
+
+	\item Para um vetor aleatório
+	\begin{enumerate}
+		\item Complexidade de custo do método Heap Sort disponível na lista de imagens ~\ref{fig:HeapPlot1A}.
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_1_aleatorio.png}
+			\caption{Complexidade de custo do método Heap Sort (Vetor Aleatório) \label{fig:HeapPlot1A}}
+		\end{figure}
+		
+		
+		\item Complexidade de tempo do método Heap Sort disponível na lista de imagens ~\ref{fig:HeapPlot2A}.
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_2_aleatorio.png}
+			\caption{Complexidade de tempo do método Heap Sort (Vetor Aleatório)\label{fig:HeapPlot2A}}
+		\end{figure}
+		
+		
+		\item Complexidade de tempo do método Heap Sort com mínimos quadrados disponível na lista de imagens ~\ref{fig:HeapPlot3A}.
+		\begin{figure}[!h]
+			\centering
+			\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_3_aleatorio.png}
+			\caption{Complexidade de tempo do método Heap Sort com mínimos quadrados (Vetor Aleatório) \label{fig:HeapPlot3A}}
+		\end{figure}
+	
+	\end{enumerate}
+	
+	\item Para um vetor ordenado crescente
+		\begin{enumerate}
+			\item Complexidade de custo do método Heap Sort disponível na lista de imagens ~\ref{fig:HeapPlot1OC}.
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_1_ordenado_crescente.png}
+				\caption{Complexidade de custo do método Heap Sort (Vetor Ordenado Crescente)\label{fig:HeapPlot1OC}}
+			\end{figure}
+			
+			
+			\item Complexidade de tempo do método Heap Sort disponível na lista de imagens ~\ref{fig:HeapPlot2OC}.
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_2_ordenado_crescente.png}
+				\caption{Complexidade de tempo do método Heap Sort (Vetor Ordenado Crescente) \label{fig:HeapPlot2OC}}
+			\end{figure}
+			
+			
+			\item Complexidade de tempo do método Heap Sort com mínimos quadrados disponível na lista de imagens ~\ref{fig:HeapPlot3OC}.
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_3_ordenado_crescente.png}
+				\caption{Complexidade de tempo do método Heap Sort com mínimos quadrados (Vetor Ordenado Crescente) \label{fig:HeapPlot3OC}}
+			\end{figure}
+		
+		\end{enumerate}
+	
+		
+		
+		\item Para um vetor ordenado decrescente
+				\begin{enumerate}
+					\item Complexidade de custo do método Heap Sort disponível na lista de imagens ~\ref{fig:HeapPlot1OD}.
+					\begin{figure}[!h]
+						\centering
+						\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_1_ordenado_decrescente.png}
+						\caption{Complexidade de custo do método Heap Sort (Vetor Ordenado Decrescente) \label{fig:HeapPlot1OD}}
+					\end{figure}
+					
+					
+					\item Complexidade de tempo do método Heap Sort disponível na lista de imagens ~\ref{fig:HeapPlot2OD}.
+					\begin{figure}[!h]
+						\centering
+					\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_2_ordenado_decrescente.png}
+						\caption{Complexidade de tempo do método Heap Sort (Vetor Ordenado Decrescente) \label{fig:HeapPlot2OD}}
+					\end{figure}
+					
+					
+					\item Complexidade de tempo do método Heap Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:HeapPlot3OD}.
+					\begin{figure}[!h]
+						\centering
+					\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_3_ordenado_decrescente.png}
+						\caption{Complexidade de tempo do método Heap Sort com mínimos quadrados (Vetor Ordenado Decrescente) \label{fig:HeapPlot3OD}}
+					\end{figure}
+				
+				\end{enumerate}
+				
+				
+			\item Para um vetor parcialmente ordenado crescente
+							\begin{enumerate}
+								\item Complexidade de custo do método Heap Sort disponível na lista de imagens ~\ref{fig:HeapPlot1POC}.
+								\begin{figure}[!h]
+									\centering
+								\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_1_parcialmente_ordenado_crescente.png}
+									\caption{Complexidade de custo do método Heap Sort (Vetor Parcialmente Ordenado Crescente) \label{fig:HeapPlot1POC}}
+								\end{figure}
+								
+								
+								\item Complexidade de tempo do método Heap Sort disponível na lista de imagens ~\ref{fig:HeapPlot2POC}.
+								\begin{figure}[!h]
+									\centering
+									\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_2_parcialmente_ordenado_crescente.png}
+									\caption{Complexidade de tempo do método Heap Sort (Vetor Parcialmente Ordenado Crescente) \label{fig:HeapPlot2POC}}
+								\end{figure}
+								
+								
+								\item Complexidade de tempo do método Heap Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:HeapPlot3POC}.
+								\begin{figure}[!h]
+									\centering
+									\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_3_parcialmente_ordenado_crescente.png}
+									\caption{Complexidade de tempo do método Heap Sort com mínimos quadrados (Vetor Parcialmente Ordenado Crescente) \label{fig:HeapPlot3POC}}
+								\end{figure}
+							
+							\end{enumerate}
+			
+			
+			\item Para um vetor parcialmente ordenado decrescente
+										\begin{enumerate}
+											\item Complexidade de custo do método Heap Sort disponível na lista de imagens ~\ref{fig:HeapPlot1POD}.
+											\begin{figure}[!h]
+												\centering
+												\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_1_parcialmente_ordenado_decrescente.png}
+												\caption{Complexidade de custo do método Heap Sort (Vetor Parcialmente Ordenado Decrescente) \label{fig:HeapPlot1POD}}
+											\end{figure}
+											
+											
+											\item Complexidade de tempo do método Heap Sort disponível na lista de imagens ~\ref{fig:HeapPlot2POD}.
+											\begin{figure}[!h]
+												\centering
+												\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_2_parcialmente_ordenado_decrescente.png}
+												\caption{Complexidade de tempo do método Heap Sort (Vetor Parcialmente Ordenado Decrescente) \label{fig:HeapPlot2POD}}
+											\end{figure}
+											
+											
+											\item Complexidade de tempo do método Heap Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:HeapPlot3POD}.
+											\begin{figure}[!h]
+												\centering
+												\includegraphics[scale=0.6]{../imagens/Heap/heap_plot_3_parcialmente_ordenado_decrescente.png}
+												\caption{Complexidade de tempo do método Heap Sort com mínimos quadrados (Vetor Parcialmente Ordenado Decrescente) \label{fig:HeapPlot3POD}}
+											\end{figure}
+										
+										\end{enumerate}
+			
+	
+\end{enumerate}
+
+\chapter{Tabelas}
+
+Seguem as tabelas utilizadas para a análise do método Heap Sort.
+
+\begin{table}[h]
+  \centering
+  \caption{Vetor Aleatorio \label{tab:aleatorio}}
+  \begin{tabular}{ccc} \\\hline
+  \textbf{Tamanho do Vetor} & \textbf{Comparações} & \textbf{Tempo(s)} \\\hline
+  32                        & 221                 & 0.002936          \\\hline
+  64                        & 554                 & 0.007282          \\\hline
+  128                       & 1220                & 0.016775         \\\hline
+  256                       &  2972               & 0.038711          \\\hline
+  512                       &  6241                & 0.084794         \\\hline
+  1024                      & 15566               & 0.204121         \\\hline
+  2048                      &  31729              & 0.417880          \\\hline
+  4096                      & 72772              & 0.966805         \\\hline
+  8192                      & 152718             & 2.020991         \\\hline
+  16384                     & 329817            & 4.330500       \\\hline
+  32768                     & 809967            & 10.479563        \\\hline
+  65536                     & 1975300            & 24.160150       \\\hline
+  \end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+  \centering
+  \caption{Vetor Ordenado Crescente \label{tab:oc}}
+  \begin{tabular}{ccc} \\\hline
+  \textbf{Tamanho do Vetor} & \textbf{Comparações} & \textbf{Tempo(s)} \\\hline
+  32                        & 224       		  & 0.003360\\\hline
+  64                        & 570                  & 0.007836
+\\\hline
+  128                       & 1301       		  & 0.017826\\\hline
+  256                       & 3045       		  & 0.041852
+\\\hline
+  512                       & 6879                 & 0.093491          \\\hline
+  1024                      & 15139			  & 0.206329
+\\\hline
+  2048                      & 33154			  & 0.447251\\\hline
+  4096                      & 75236			  & 1.009909         \\\hline
+  8192                      & 208341			  & 2.714416
+\\\hline
+  16384                     & 359038 	             & 4.934060\\\hline
+  32768                     & 725481 	             & 9.676112\\\hline
+  65536                    & 2068944	             & 27.122525\\\hline
+  \end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+  \centering
+  \caption{Vetor Ordenado Decrescente \label{tab:od}}
+  \begin{tabular}{ccc} \\\hline
+  \textbf{Tamanho do Vetor} & \textbf{Comparações} & \textbf{Tempo(s)} \\\hline
+  32                        & 189                  & 0.002377\\\hline
+  64                        & 472                  & 0.005641
+\\\hline
+  128                       & 1137                 & 0.013842\\\hline
+  256                       & 2799                & 0.035372\\\hline
+  512                       & 5920                & 0.073351
+\\\hline
+  1024                      & 13172               & 0.168761\\\hline
+  2048                      & 29450       		 & 0.370108          \\\hline
+  4096                      & 65470			 & 0.830505         \\\hline
+  8192                      & 141369              & 1.795706\\\hline
+  16384                     & 399986             & 4.984716\\\hline
+  32768                     & 677610             & 8.592706\\\hline
+  65536                     & 1675479			& 21.039164
+\\\hline
+  \end{tabular}
+\end{table}
+
+
+\begin{table}[h]
+  \centering
+  \caption{Vetor Parcialmente Ordenado Crescente \label{tab:poc}}
+  \begin{tabular}{ccc} \\\hline
+  \textbf{Tamanho do Vetor} & \textbf{Comparações} & \textbf{Tempo(s)} \\\hline
+  32                        & 215                  & 0.003182          \\\hline
+  64                        & 545                 & 0.007835          \\\hline
+  128                       & 1430                 & 0.019694          \\\hline
+  256                       & 3021                & 0.042281          \\\hline
+  512                       & 6668               & 0.089422          \\\hline
+  1024                      & 15339               & 0.211859          \\\hline
+  2048                      & 33122              & 0.442760          \\\hline
+  4096                      & 72154              & 0.962233        \\\hline
+  8192                      & 153615             & 2.050023
+       \\\hline
+  16384                     & 353799            & 4.667474        \\\hline
+  32768                     & 758077            & 10.041427        \\\hline
+  65536                     & 1850046            & 24.526060        \\\hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[h]
+  \centering
+  \caption{Vetor Parcialmente Ordenado Decrescente \label{tab:pod}}
+  \begin{tabular}{ccc} \\\hline
+  \textbf{Tamanho do Vetor} & \textbf{Comparações} & \textbf{Tempo(s)} )} \\\hline
+  32                        & 204                  & 0.002475          \\\hline
+  64                        & 453                 & 0.005813          \\\hline
+  128                       & 1361                 & 0.017676          \\\hline
+  256                       & 2659                & 0.033628          \\\hline
+  512                       & 6338               & 0.076890          \\\hline
+  1024                      & 13982               & 0.176524          \\\hline
+  2048                      & 30510              & 0.386215          \\\hline
+  4096                      & 66639              & 0.856832         \\\hline
+  8192                      & 177670             & 2.257010        \\\hline
+  16384                     & 352288            & 4.448912        \\\hline
+  32768                     & 826238            & 10.542908        \\\hline
+  65536                     & 1975300            & 25.168916        \\\hline
+
+  \end{tabular}
+\end{table}
+
+
+\chapter{Análise}
+
+Podemos observar que todas as curvas de todos os gráficos, exceto os de complexidade de tempo sem a interpolação dos mínimos quadrados(Gráficos \ref{fig:HeapPlot2A},\ref{fig:HeapPlot2OC},\ref{fig:HeapPlot2OD},\ref{fig:HeapPlot2POC},\ref{fig:HeapPlot2POD}), apresentaram uma correspondência forte com a curva da função $F(x) = x lg(x)$, o que nos permite concluir que, dada a complexidade de tempo do algoritmo Heap Sort por $G(x)$ então $F(x) = c * G(x)$ sendo que $c$ é uma constante maior que zero e $x > x_0$. Portanto, podemos verificar que pelo fato do algoritmo heapSort envolver $n$ chamadas da função maxHeapify, que possui complexidade $O(lg(n))$, sua complexidade é $O(n lg(n))$.
+
+\chapter{Citações e referências bibliográficas}
+
+
+
+
+
+
+
+
+\clearpage
+\addcontentsline{toc}{part}{Apêndice}
+\appendix
+
+\chapter{Códigos extensos \label{ap:testdriver}}
+\section{testdriver.py}
+\lstinputlisting[label= {arq:testdriver.py}, caption={testdriver.py}] {../../testdriver.py}
+
+
+\end{document} 
