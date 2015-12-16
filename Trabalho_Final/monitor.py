@@ -8,6 +8,7 @@ import gc
 import random
 import numpy as np
 
+
 from tempo import *
 
 # Vetores de teste
@@ -25,7 +26,7 @@ def troca(m,v,n): ## seleciona o nível de embaralhamento do vetor
     return v
 
 
-def criavet(n, grau=-0.5, inf=0, sup=1000):
+def criavet(n, grau=-0.5, inf=-1000, sup=1000):
     passo = (sup - inf)/n
     if grau < 0.0:
         v = np.arange(sup, inf, -passo)
@@ -41,6 +42,9 @@ def criavet(n, grau=-0.5, inf=0, sup=1000):
             return troca(grau*n, v, n)
     else:
         return np.random.randint(inf, sup, size=n)
+        #return [random.random() for i in range(n)] # for bucket sort
+
+
 
 #print(criavet(20))
 

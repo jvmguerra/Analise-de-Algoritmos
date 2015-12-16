@@ -21,7 +21,9 @@ def intercala(A,p,q,r):
 
 @profile
 def merge(A):
-	mergeSort(A,A[0],A[-1])
+	mergeSort(A,0,len(A)-1)
+	return A
+
 
 @profile
 def mergeSort(A,esquerda,direita):
@@ -32,9 +34,8 @@ def mergeSort(A,esquerda,direita):
 		intercala(A,esquerda,meio,direita)
 
 
-
-
 #A = [3,20,52,2,54,23,17,18,1,4]
+
+
 #Para criar uma lista preenchida com 0's e que possua tamanho de A basta
-#merge(A)
-#print(A)
+#print(mergeSort(A))

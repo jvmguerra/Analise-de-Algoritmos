@@ -12,8 +12,8 @@ import sys , shutil
 #Para o executa_teste a chamada das funções e o shutil.move()
 #para os plots        a chamada das funções e o savefig
 
-sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/Codigos/Counting')  ## adicionei o código de ordenação
-sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Counting') ## adicionei o resultado do executa_teste
+sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/Codigos/Bucket')  ## adicionei o código de ordenação
+sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bucket') ## adicionei o resultado do executa_teste
 
 
 def executa_teste(arqteste, arqsaida, nlin, intervalo):
@@ -46,9 +46,9 @@ def executa_teste(arqteste, arqsaida, nlin, intervalo):
         print(str_res)
         f.write(str_res + '\n')
     f.close()
-    shutil.move("tCounting_vetor_parcialmente_ordenado_decrescente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Counting/tCounting_vetor_parcialmente_ordenado_decrescente.dat")
+    shutil.move("tBucket_vetor_parcialmente_ordenado_decrescente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bucket/tBucket_vetor_parcialmente_ordenado_decrescente.dat")
 
-executa_teste("testeGeneric.py", "tCounting_vetor_parcialmente_ordenado_decrescente.dat", 46, 2 ** np.arange(5,15))
+executa_teste("testeGeneric.py", "tBucket_vetor_parcialmente_ordenado_decrescente.dat", 46, 2 ** np.arange(5,15))
 
 def executa_teste_memoria(arqteste, arqsaida, nlin, intervalo):
     """Executa uma sequência de testes contidos em arqteste, com:
@@ -107,19 +107,19 @@ def plota_teste1(arqsaida):
 def plota_teste2(arqsaida):
     n, t = np.loadtxt(arqsaida, unpack=True)
     plt.plot(n, n , label='$n$')
-    plt.plot(n, t, 'ro', label='counting sort')
+    plt.plot(n, t, 'ro', label='bucket sort')
 
     # Posiciona a legenda
     plt.legend(loc='upper left')
 
     # Posiciona o título
-    plt.title('Análise da complexidade de \ntempo do método Counting Sort')
+    plt.title('Análise da complexidade de \ntempo do método Bucket Sort')
 
     # Rotula os eixos
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Counting/counting_plot_2_parcialmente_ordenado_decrescente.png')
+    plt.savefig('relatorio/imagens/Bucket/bucket_plot_2_parcialmente_ordenado_decrescente.png')
     plt.show()
 
 
@@ -132,24 +132,24 @@ def plota_teste3(arqsaida):
     p = np.poly1d(coefs)
 
     plt.plot(n, p(n), label='$n$')
-    plt.plot(n, t, 'ro', label='counting sort')
+    plt.plot(n, t, 'ro', label='bucket sort')
 
     # Posiciona a legenda
     plt.legend(loc='upper left')
 
     # Posiciona o título
-    plt.title('Análise da complexidade de \ntempo do método Counting Sort com mínimos quadrados')
+    plt.title('Análise da complexidade de \ntempo do método Bucket Sort com mínimos quadrados')
 
     # Rotula os eixos
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Counting/counting_plot_3_parcialmente_ordenado_decrescente.png')
+    plt.savefig('relatorio/imagens/Bucket/bucket_plot_3_parcialmente_ordenado_decrescente.png')
     plt.show()
 
 #plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Selection/tSelection_vetor_ordenado_descresente.dat")
-plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Counting/tCounting_vetor_parcialmente_ordenado_decrescente.dat")
-plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Counting/tCounting_vetor_parcialmente_ordenado_decrescente.dat")
+plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bucket/tBucket_vetor_parcialmente_ordenado_decrescente.dat")
+plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bucket/tBucket_vetor_parcialmente_ordenado_decrescente.dat")
 
 
 def plota_teste4(arqsaida):

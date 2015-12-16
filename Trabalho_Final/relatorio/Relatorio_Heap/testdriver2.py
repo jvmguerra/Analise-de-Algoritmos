@@ -30,11 +30,15 @@ def executa_teste(arqteste, arqsaida,  intervalo,nlin=26,nlin2=30,nlin3=32,tempo
         cmd = ' '.join(["kernprof -l -v", "testeGeneric.py", str(n)])
         str_saida = subprocess.check_output(cmd, shell=True).decode('utf-8')
         linhas = str_saida.split('\n')
-        for i in linhas:
-            print(i)
-        #print (linhas)  FALTA ACABAR AKI  !!!!!!!!!!!!!!!!
-        unidade_tempo = float(linhas[1].split()[2]) + float(linhas[1].split()[2]) +float(linhas[1].split()[2]) + float(linhas[1].split()[2])
-        tempo_total = float(linhas[3].split()[2])
+        #for i in linhas:
+    #        print(i)
+        #print (linhas)
+
+    #    print(linhas[tempo[0]].split()[2])
+
+
+        tempo_total = float(linhas[tempo[0]].split()[2]) + float(linhas[tempo[1]].split()[2]) +float(linhas[tempo[2]].split()[2]) + float(linhas[tempo[3]].split()[2])
+        unidade_tempo = float(linhas[3].split()[2])
         lcomp = int(linhas[nlin].split()[2]) + int(linhas[nlin2].split()[2]) + int(linhas[nlin3].split()[2])
 
         #print(linhas[nlin].split()[2])
@@ -52,9 +56,9 @@ def executa_teste(arqteste, arqsaida,  intervalo,nlin=26,nlin2=30,nlin3=32,tempo
         f.write(str_res + '\n')
         lcomp = 0
     f.close()
-    shutil.move("tHeap_vetor_parcialmente_ordenado_decrescente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_parcialmente_ordenado_decrescente.dat")
+    shutil.move("tHeap_vetor_ordenado_crescente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_crescente.dat")
 
-executa_teste("testeGeneric.py", "tHeap_vetor_parcialmente_ordenado_decrescente.dat", 2 ** np.arange(5,20))
+executa_teste("testeGeneric.py", "tHeap_vetor_ordenado_crescente.dat", 2 ** np.arange(5,17))
 
 def executa_teste_memoria(arqteste, arqsaida, nlin, intervalo):
     """Executa uma sequência de testes contidos em arqteste, com:
@@ -92,40 +96,39 @@ def plota_teste1(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
     #print("n: ",n,"\nc: ",c,"\nt: ",t)
     #n eh o tamanho da entrada , c eh o tanto de comparações e t eh o tempo gasto
-    plt.plot(n, n ** 2, label='$n^2$')  ## custo esperado bubble Sort
+    plt.plot(n, n * np.log2(n), label='$n * log_2(n)$')  ## custo esperado bubble Sort
     plt.plot(n, c, 'ro', label='heap sort')
-
     # Posiciona a legenda
     plt.legend(loc='upper left')
 
     # Posiciona o título
-    plt.title('Análise de comparações do método da seleção')
+    plt.title('Análise de comparações do método Heap Sort')
 
     # Rotula os eixos
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Número de comparações')
 
-    plt.savefig('relatorio/imagens/Heap/heap_plot_1_parcialmente_ordenado_descresente.png')
+    plt.savefig('relatorio/imagens/Heap/heap_plot_1_ordenado_crescente.png')
     plt.show()
 
 
 
 def plota_teste2(arqsaida):
     n, c, t = np.loadtxt(arqsaida, unpack=True)
-    plt.plot(n, n ** 2, label='$n^2$')
+    plt.plot(n, n * np.log2(n), label='$n * log_2(n)$')
     plt.plot(n, t, 'ro', label='heap sort')
 
     # Posiciona a legenda
     plt.legend(loc='upper left')
 
     # Posiciona o título
-    plt.title('Análise da complexidade de \ntempo do método da seleção')
+    plt.title('Análise da complexidade de \ntempo do método Heap Sort')
 
     # Rotula os eixos
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Heap/heap_plot_2_parcialmente_ordenado_descresente.png')
+    plt.savefig('relatorio/imagens/Heap/heap_plot_2_ordenado_crescente.png')
     plt.show()
 
 
@@ -146,18 +149,18 @@ def plota_teste3(arqsaida):
     plt.legend(loc='upper left')
 
     # Posiciona o título
-    plt.title('Análise da complexidade de \ntempo do método da seleção com mínimos quadrados')
+    plt.title('Análise da complexidade de \ntempo do método Heap Sort com mínimos quadrados')
 
     # Rotula os eixos
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Heap/heap_plot_3_parcialmente_ordenado_descresente.png')
+    plt.savefig('relatorio/imagens/Heap/heap_plot_3_ordenado_crescente.png')
     plt.show()
 
-#plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_parcialmente_ordenado_descresente.dat")
-#plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_parcialmente_ordenado_descresente.dat")
-#plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_parcialmente_ordenado_descresente.dat")
+plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_crescente.dat")
+plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_crescente.dat")
+plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_crescente.dat")
 
 
 def plota_teste4(arqsaida):
