@@ -560,6 +560,8 @@ Seguem as tabelas utilizadas para a análise do método Radix Sort.
 
 \chapter{Análise}
 
+O Radix Sort é um algoritmo que dado um vetor, todos os elementos deste podem ser representados com d dígitos, onde d é uma constante. A ordenação é feita aplicando o algoritmo Counting Sort em cada dígito, o uso do Counting Sort se da pelo fato que este algoritmo é estável, além de possuir complexidade $O(n)$.
+
 Podemos observar que todas as curvas de todos os gráficos, exceto os de complexidade de tempo sem a interpolação dos mínimos quadrados(Gráficos \ref{fig:RadixPlot2A},\ref{fig:RadixPlot2OC},\ref{fig:RadixPlot2OD},\ref{fig:RadixPlot2POC},\ref{fig:RadixPlot2POD}), apresentaram uma correspondência forte com a curva da função $F(x) = x$, o que nos permite concluir que, dada a complexidade de tempo do algoritmo Radix Sort por $G(x)$ então $F(x) = c * G(x)$ sendo que $c$ é uma constante maior que zero e $x > x_0$. Portanto, o Radix Sort é $O(n)$.
 
 \chapter{Citações e referências bibliográficas}
