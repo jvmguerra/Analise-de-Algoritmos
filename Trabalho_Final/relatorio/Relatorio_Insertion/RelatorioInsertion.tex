@@ -656,6 +656,12 @@ Seguem as tabelas utilizadas para a análise do método Insertion Sort.
 
 \chapter{Análise}
 
+O Insertion Sort é comumente comparado à forma com que as pessoas ordenam cartas de baralho em suas mãos.
+
+A ordem de complexidade esperada para o Insertion Sort para o pior caso é de $\theta (n^2)$, e ela ocorre quando o arranjo está na ordem inversa. O melhor caso ocorre quando o arranjo já está praticamente ordenado, conseguindo um tempo de ordem $\theta (n)$. No caso médio, pode-se dizer que ele está na ordem $O(n)$.
+
+O Insertion Sort possui a seguintes características: estável e in-place. Além disso, ele possui a característica de – para vetores extremamente pequenos – conseguir ordernar em tempo linear. Por isso, outros algoritmos utilizam o Insertion Sort em passos bases de suas implementações, como por exemplo o Bucket Sort e implementações eficientes do Quick Sort.
+
 Podemos observar que todas as curvas de todos os gráficos, exceto os de complexidade de tempo sem a interpolação dos mínimos quadrados(Gráficos \ref{fig:InsertionPlot2A},\ref{fig:InsertionPlot2OC},\ref{fig:InsertionPlot2OD},\ref{fig:InsertionPlot2POC},\ref{fig:InsertionPlot2POD}), apresentaram uma correspondência forte com a curva da função $F(x) = x^2$, o que nos permite concluir que, dada a complexidade de tempo do algoritmo Insertion Sort por $G(x)$ então $F(x) = c * G(x)$ sendo que $c$ é uma constante maior que zero e $x > x_0$. Portanto, o Insertion Sort é $O(n^2)$.
 
 \chapter{Citações e referências bibliográficas}

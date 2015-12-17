@@ -18,7 +18,7 @@
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[usenames,svgnames,dvipsnames]{xcolor}
 \usepackage[a4paper,top=2.54cm,bottom=2.0cm,left=2.0cm,right=2.54cm]{geometry} % margens
-\usepackage{amsmath} 
+\usepackage{amsmath}
 
 \usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=DarkGreen,
 linkcolor=NavyBlue,urlcolor=DarkRed,filecolor=green,bookmarksopen=true]{hyperref} % links coloridos
@@ -98,7 +98,7 @@ framexleftmargin=10pt,
 framexrightmargin=10pt,
 literate={â}{{\^{a}}}1  % para formatar corretamente os acentos do Português ao usar utf8
     {ê}{{\^{e}}}1
-    {ô}{{\^{o}}}1  
+    {ô}{{\^{o}}}1
     {Â}{{\^{A}}}1
     {Ê}{{\^{E}}}1
     {Ô}{{\^{O}}}1
@@ -164,7 +164,7 @@ literate={â}{{\^{a}}}1  % para formatar corretamente os acentos do Português a
 
 
 % Formata o caption da listagem
-% \DeclareCaptionFont{blue}{\color{blue}} 
+% \DeclareCaptionFont{blue}{\color{blue}}
 
 % \captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
 \usepackage{caption}
@@ -173,7 +173,7 @@ literate={â}{{\^{a}}}1  % para formatar corretamente os acentos do Português a
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
 
 \newcommand{\ListingsPath}{./codigos}
-% Inclui o nome do arquivo como Caption 
+% Inclui o nome do arquivo como Caption
 \newcommand{\filelisting}[2][]{%
     \lstinputlisting[caption={\texttt{\detokenize{#2}}},#1]{\ListingsPath/#2}%
 }
@@ -200,14 +200,14 @@ Universidade Federal de Uberlândia
   \maketitle
 % -------------------------------------------------------------------- %
 % Listas de figuras, tabelas e códigos criadas automaticamente
-\listoffigures            
-\listoftables            
+\listoffigures
+\listoftables
 \lstlistoflistings
 % -------------------------------------------------------------------- %
 
 % -------------------------------------------------------------------- %
 % Sumário
-\tableofcontents    
+\tableofcontents
 
 % Capítulos do trabalho
 
@@ -218,9 +218,9 @@ Universidade Federal de Uberlândia
 \setlength{\parskip}{0.15in} % espaçamento entre paragráfos
 
 \chapter{Introdução}
-Este documento foi feito com o intuito de exibir uma análise do algoritmo Counting Sort 
+Este documento foi feito com o intuito de exibir uma análise do algoritmo Counting Sort
 com relação a tempo. Além disso, será feita uma comparação da curva de tempo do que se espera do
-algoritmo, ou seja, $O(n^2)$ com o caso prático. 
+algoritmo, ou seja, $O(n^2)$ com o caso prático.
 
 \section{Diretório}
 
@@ -309,67 +309,67 @@ OBS.: Como o método Counting Sort não realiza comparações, não foi possíve
 \begin{enumerate}
 
 	\item Para um vetor aleatório
-	\begin{enumerate}	
+	\begin{enumerate}
 		\item Complexidade de tempo do método Counting Sort disponível na lista de imagens ~\ref{fig:CountingPlot2A}.
 		\begin{figure}[!h]
 			\centering
 			\includegraphics[scale=0.6]{../imagens/Counting/counting_plot_2_aleatorio.png}
 			\caption{Complexidade de tempo do método Counting Sort (Vetor Aleatório)\label{fig:CountingPlot2A}}
 		\end{figure}
-		
-		
+
+
 		\item Complexidade de tempo do método Counting Sort com mínimos quadrados disponível na lista de imagens ~\ref{fig:CountingPlot3A}.
 		\begin{figure}[!h]
 			\centering
 			\includegraphics[scale=0.6]{../imagens/Counting/counting_plot_3_aleatorio.png}
 			\caption{Complexidade de tempo do método Counting Sort com mínimos quadrados (Vetor Aleatório) \label{fig:CountingPlot3A}}
 		\end{figure}
-	
+
 	\end{enumerate}
-	
+
 	\item Para um vetor ordenado crescente
-		\begin{enumerate}		
-			
+		\begin{enumerate}
+
 			\item Complexidade de tempo do método Counting Sort disponível na lista de imagens ~\ref{fig:CountingPlot2OC}.
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[scale=0.6]{../imagens/Counting/counting_plot_2_ordenado_crescente.png}
 				\caption{Complexidade de tempo do método Counting Sort (Vetor Ordenado Crescente) \label{fig:CountingPlot2OC}}
 			\end{figure}
-			
-			
+
+
 			\item Complexidade de tempo do método Counting Sort com mínimos quadrados disponível na lista de imagens ~\ref{fig:CountingPlot3OC}.
 			\begin{figure}[!h]
 				\centering
 				\includegraphics[scale=0.6]{../imagens/Counting/counting_plot_3_ordenado_crescente.png}
 				\caption{Complexidade de tempo do método Counting Sort com mínimos quadrados (Vetor Ordenado Crescente) \label{fig:CountingPlot3OC}}
 			\end{figure}
-		
+
 		\end{enumerate}
-	
-		
-		
+
+
+
 		\item Para um vetor ordenado decrescente
 				\begin{enumerate}
-					
+
 					\item Complexidade de tempo do método Counting Sort disponível na lista de imagens ~\ref{fig:CountingPlot2OD}.
 					\begin{figure}[!h]
 						\centering
 						\includegraphics[scale=0.6]{../imagens/Counting/counting_plot_2_ordenado_decrescente.png}
 						\caption{Complexidade de tempo do método Counting Sort (Vetor Ordenado Decrescente) \label{fig:CountingPlot2OD}}
 					\end{figure}
-					
-					
+
+
 					\item Complexidade de tempo do método Counting Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:CountingPlot3OD}.
 					\begin{figure}[!h]
 						\centering
 						\includegraphics[scale=0.6]{../imagens/Counting/counting_plot_3_ordenado_decrescente.png}
 						\caption{Complexidade de tempo do método Counting Sort com mínimos quadrados (Vetor Ordenado Decrescente) \label{fig:CountingPlot3OD}}
 					\end{figure}
-				
+
 				\end{enumerate}
-				
-				
+
+
 			\item Para um vetor parcialmente ordenado crescente
 							\begin{enumerate}
 								\item Complexidade de tempo do método Counting Sort disponível na lista de imagens ~\ref{fig:CountingPlot2POC}.
@@ -378,20 +378,20 @@ OBS.: Como o método Counting Sort não realiza comparações, não foi possíve
 									\includegraphics[scale=0.6]{../imagens/Counting/counting_plot_2_parcialmente_ordenado_crescente.png}
 									\caption{Complexidade de tempo do método Counting Sort (Vetor Parcialmente Ordenado Crescente) \label{fig:CountingPlot2POC}}
 								\end{figure}
-								
-								
+
+
 								\item Complexidade de tempo do método Counting Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:CountingPlot3POC}.
 								\begin{figure}[!h]
 									\centering
 									\includegraphics[scale=0.6]{../imagens/Counting/counting_plot_3_parcialmente_ordenado_crescente.png}
 									\caption{Complexidade de tempo do método Counting Sort com mínimos quadrados (Vetor Parcialmente Ordenado Crescente) \label{fig:CountingPlot3POC}}
 								\end{figure}
-							
+
 							\end{enumerate}
-			
-			
+
+
 			\item Para um vetor parcialmente ordenado decrescente
-										
+
 										\begin{enumerate}
 											\item Complexidade de tempo do método Counting Sort disponível na lista de imagens ~\ref{fig:CountingPlot2POD}.
 											\begin{figure}[!h]
@@ -399,18 +399,18 @@ OBS.: Como o método Counting Sort não realiza comparações, não foi possíve
 												\includegraphics[scale=0.6]{../imagens/Counting/counting_plot_2_parcialmente_ordenado_decrescente.png}
 												\caption{Complexidade de tempo do método Counting Sort (Vetor Parcialmente Ordenado Decrescente) \label{fig:CountingPlot2POD}}
 											\end{figure}
-											
-											
+
+
 											\item Complexidade de tempo do método Counting Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:CountingPlot3POD}.
 											\begin{figure}[!h]
 												\centering
 												\includegraphics[scale=0.6]{../imagens/Counting/counting_plot_3_parcialmente_ordenado_decrescente.png}
 												\caption{Complexidade de tempo do método Counting Sort com mínimos quadrados (Vetor Parcialmente Ordenado Decrescente) \label{fig:CountingPlot3POD}}
 											\end{figure}
-										
+
 										\end{enumerate}
-			
-	
+
+
 \end{enumerate}
 
 \chapter{Tabelas}
@@ -450,7 +450,7 @@ Seguem as tabelas utilizadas para a análise do método Counting Sort.
   2048                            & 0.007226          \\\hline
   4096                            & 0.013225         \\\hline
   8192                            & 0.025477         \\\hline
-  16384                           & 0.050537   
+  16384                           & 0.050537
   \\\hline
   \end{tabular}
 \end{table}
@@ -470,7 +470,7 @@ Seguem as tabelas utilizadas para a análise do método Counting Sort.
   2048                            & 0.007246          \\\hline
   4096                            & 0.012888         \\\hline
   8192                            & 0.025990         \\\hline
-  16384                           & 0.048788       
+  16384                           & 0.048788
   \\\hline
   \end{tabular}
 \end{table}
@@ -511,15 +511,17 @@ Seguem as tabelas utilizadas para a análise do método Counting Sort.
   2048                            & 0.006980          \\\hline
   4096                            & 0.013248
   \\\hline
-  8192                            & 0.025285         
+  8192                            & 0.025285
   \\\hline
-  16384                           & 0.050265       
+  16384                           & 0.050265
   \\\hline
   \end{tabular}
 \end{table}
 
 
 \chapter{Análise}
+
+O Counting Sort é um dos algoritmos analisados em nosso trabalho que não utiliza de comparações para atingir seu objetivo. No entanto, ele possui algumas restrições para poder ser utilizado. Uma dessas restrições é de que os elementos do arranjo devem ser inteiros contidos em um determinado intervalo finito. Além disso, como se pode observar nos dados coletados, ele não é um algoritmo in-place, ou seja, utiliza memória adicional da ordem de $\theta (n)$.
 
 Podemos observar que todas as curvas de todos os gráficos, exceto os de complexidade de tempo sem a interpolação dos mínimos quadrados(Gráficos \ref{fig:CountingPlot2A},\ref{fig:CountingPlot2OC},\ref{fig:CountingPlot2OD},\ref{fig:CountingPlot2POC},\ref{fig:CountingPlot2POD}), apresentaram uma correspondência forte com a curva da função $F(x) = x$, o que nos permite concluir que, dada a complexidade de tempo do algoritmo Counting Sort por $G(x)$ então $F(x) = c * G(x)$ sendo que $c$ é uma constante maior que zero e $x > x_0$. Portanto, o Counting Sort é $O(n)$.
 
@@ -541,4 +543,4 @@ Podemos observar que todas as curvas de todos os gráficos, exceto os de complex
 \lstinputlisting[label= {arq:testdriver.py}, caption={testdriver.py}] {testdriver.py}
 
 
-\end{document} 
+\end{document}
