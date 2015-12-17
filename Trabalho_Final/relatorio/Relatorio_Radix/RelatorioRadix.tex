@@ -220,7 +220,7 @@ Universidade Federal de Uberlândia
 \chapter{Introdução}
 Este documento foi feito com o intuito de exibir uma análise do algoritmo Radix Sort
 com relação a tempo. Além disso, será feita uma comparação da curva de tempo do que se espera do
-algoritmo, ou seja, $O(n^2)$ com o caso prático.
+algoritmo, ou seja, $O(n)$ com o caso prático.
 
 \section{Diretório}
 
@@ -436,16 +436,21 @@ Seguem as tabelas utilizadas para a análise do método Radix Sort.
   \caption{Vetor Aleatório \label{tab:aleatorio}}
   \begin{tabular}{ccc} \\\hline
   \textbf{Tamanho do Vetor}  & \textbf{Tempo(s)} \\\hline
-  32                                   & 0.000924          \\\hline
-  64                                   & 0.001048          \\\hline
-  128                                  & 0.001275          \\\hline
-  256                                  & 0.001602          \\\hline
-  512                                  & 0.002296          \\\hline
-  1024                                 & 0.003892          \\\hline
-  2048                                 & 0.006807          \\\hline
-  4096                                 & 0.012659         \\\hline
-  8192                                 & 0.025144         \\\hline
-  16384                                & 0.047915        \\\hline
+  32                                   & 0.001969         \\\hline
+  64                                   & 0.003053          \\\hline
+  128                                  & 0.005992         \\\hline
+  256                                  & 0.012797          \\\hline
+  512                                  & 0.023158          \\\hline
+  1024                                 & 0.051994          \\\hline
+  2048                                 & 0.092159          \\\hline
+  4096                                 & 0.202499         \\\hline
+  8192                                 & 0.370421        \\\hline
+  16384                                & 0.758604        \\\hline
+  32768                                & 1.619927        \\\hline
+  65536                                & 4.523400        \\\hline
+  131072                               & 9.818129        \\\hline
+  262144                               & 18.306709        \\\hline
+  524288                               & 36.800410        \\\hline
   \end{tabular}
 \end{table}
 
@@ -455,17 +460,22 @@ Seguem as tabelas utilizadas para a análise do método Radix Sort.
   \caption{Vetor Ordenado Crescente \label{tab:oc}}
   \begin{tabular}{ccc} \\\hline
   \textbf{Tamanho do Vetor}  & \textbf{Tempo(s)} \\\hline
-  32                              & 0.001087          \\\hline
-  64                              & 0.001281          \\\hline
-  128                             & 0.001409          \\\hline
-  256                             & 0.001953          \\\hline
-  512                             & 0.002287          \\\hline
-  1024                            & 0.004282          \\\hline
-  2048                            & 0.007226          \\\hline
-  4096                            & 0.013225         \\\hline
-  8192                            & 0.025477         \\\hline
-  16384                           & 0.050537
+  32                              & 0.002569          \\\hline
+  64                              & 0.004878          \\\hline
+  128                             & 0.009286          \\\hline
+  256                             & 0.018059          \\\hline
+  512                             & 0.035540          \\\hline
+  1024                            & 0.071870          \\\hline
+  2048                            & 0.139780          \\\hline
+  4096                            & 0.286223         \\\hline
+  8192                            & 0.576995         \\\hline
+  16384                           & 1.154050
   \\\hline
+  32768                           & 2.276046         \\\hline
+  65536                           & 4.633520         \\\hline
+  131072                          & 9.113568         \\\hline
+  26214                           & 18.039597         \\\hline
+  524288                          & 37.771921        \\\hline
   \end{tabular}
 \end{table}
 
@@ -475,17 +485,22 @@ Seguem as tabelas utilizadas para a análise do método Radix Sort.
   \caption{Vetor Ordenado Decrescente \label{tab:od}}
   \begin{tabular}{ccc} \\\hline
   \textbf{Tamanho do Vetor}  & \textbf{Tempo(s)} \\\hline
-  32                              & 0.001238          \\\hline
-  64                              & 0.001347          \\\hline
-  128                             & 0.001692          \\\hline
-  256                             & 0.001601          \\\hline
-  512                             & 0.002410          \\\hline
-  1024                            & 0.004015          \\\hline
-  2048                            & 0.007246          \\\hline
-  4096                            & 0.012888         \\\hline
-  8192                            & 0.025990         \\\hline
-  16384                           & 0.048788
+  32                              & 0.001840          \\\hline
+  64                              & 0.003180          \\\hline
+  128                             & 0.006559          \\\hline
+  256                             & 0.011725          \\\hline
+  512                             & 0.023004          \\\hline
+  1024                            & 0.050099          \\\hline
+  2048                            & 0.092232          \\\hline
+  4096                            & 0.199064         \\\hline
+  8192                            & 0.399744         \\\hline
+  16384                           & 0.797877
   \\\hline
+  32768                           & 1.505112         \\\hline
+  65536                           & 4.643434         \\\hline
+  131072                          & 8.969211         \\\hline
+  262144                          & 18.060512         \\\hline
+  524288                          & 36.680364        \\\hline
   \end{tabular}
 \end{table}
 
@@ -495,17 +510,22 @@ Seguem as tabelas utilizadas para a análise do método Radix Sort.
   \caption{Vetor Parcialmente Ordenado Decrescente \label{tab:pod}}
   \begin{tabular}{ccc} \\\hline
   \textbf{Tamanho do Vetor}  & \textbf{Tempo(s)} \\\hline
-  32                              & 0.001269          \\\hline
-  64                              & 0.001236          \\\hline
-  128                             & 0.001449          \\\hline
-  256                             & 0.001712          \\\hline
-  512                             & 0.002419          \\\hline
-  1024                            & 0.003892          \\\hline
-  2048                            & 0.006918          \\\hline
-  4096                            & 0.013007         \\\hline
-  8192                            & 0.025498         \\\hline
-  16384                           & 0.048699
+  32                              & 0.001891          \\\hline
+  64                              & 0.003064         \\\hline
+  128                             & 0.006604          \\\hline
+  256                             & 0.011961          \\\hline
+  512                             & 0.025210          \\\hline
+  1024                            & 0.048299          \\\hline
+  2048                            & 0.106676          \\\hline
+  4096                            & 0.279154         \\\hline
+  8192                            & 0.557848         \\\hline
+  16384                           & 1.147800
   \\\hline
+  32768                           & 2.322026         \\\hline
+  65536                           & 4.530593         \\\hline
+  131072                          & 9.178682         \\\hline
+  262144                          & 18.287574         \\\hline
+  524288                          & 37.046162         \\\hline
   \end{tabular}
 \end{table}
 
@@ -516,19 +536,24 @@ Seguem as tabelas utilizadas para a análise do método Radix Sort.
   \caption{Vetor Parcialmente Ordenado Crescente \label{tab:poc}}
   \begin{tabular}{ccc} \\\hline
   \textbf{Tamanho do Vetor}  & \textbf{Tempo(s)} \\\hline
-  32                              & 0.001263          \\\hline
-  64                              & 0.001182          \\\hline
-  128                             & 0.001514          \\\hline
-  256                             & 0.001999          \\\hline
-  512                             & 0.002636          \\\hline
-  1024                            & 0.004079          \\\hline
-  2048                            & 0.006980          \\\hline
-  4096                            & 0.013248
+  32                              & 0.001702          \\\hline
+  64                              & 0.003069          \\\hline
+  128                             & 0.009290         \\\hline
+  256                             & 0.017940          \\\hline
+  512                             & 0.035721         \\\hline
+  1024                            & 0.070035          \\\hline
+  2048                            & 0.143542          \\\hline
+  4096                            & 0.294574
   \\\hline
-  8192                            & 0.025285
+  8192                            & 0.571618
   \\\hline
-  16384                           & 0.050265
+  16384                           & 1.151897
   \\\hline
+  32768                           & 2.321207          \\\hline
+  65536                           & 4.564890          \\\hline
+  131072                          & 9.270520          \\\hline
+  262144                          & 18.408352          \\\hline
+  524288                          & 37.733941          \\\hline
   \end{tabular}
 \end{table}
 
