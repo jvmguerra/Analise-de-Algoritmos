@@ -220,7 +220,7 @@ Universidade Federal de Uberlândia
 \chapter{Introdução}
 Este documento foi feito com o intuito de exibir uma análise do algoritmo Merge Sort
 com relação a tempo. Além disso, será feita uma comparação da curva de tempo do que se espera do
-algoritmo, ou seja, $O(n^2)$ com o caso prático.
+algoritmo, ou seja, $O(nlgn)$ com o caso prático.
 
 \section{Diretório}
 
@@ -566,7 +566,8 @@ Seguem as tabelas utilizadas para a análise do método Merge Sort.
 
 \chapter{Análise}
 
-Podemos observar que todas as curvas de todos os gráficos, exceto os de complexidade de tempo sem a interpolação dos mínimos quadrados(Gráficos \ref{fig:MergePlot2A},\ref{fig:MergePlot2OC},\ref{fig:MergePlot2OD},\ref{fig:MergePlot2POC},\ref{fig:MergePlot2POD}), apresentaram uma correspondência forte com a curva da função $F(x) = x^2$, o que nos permite concluir que, dada a complexidade de tempo do algoritmo Merge Sort por $G(x)$ então $F(x) = c * G(x)$ sendo que $c$ é uma constante maior que zero e $x > x_0$. Portanto, o Merge Sort é $O(n^2)$.
+O algoritmo Merge Sort é um algoritmo de divisão e conquista que utiliza a função intercala, $\theta(n)$, que tem como objetivo ordenar as subdivisões estabelecidades pelo merge. Como a cada momento são feitas $n/2$ divisões e isso prossegue até termos um elemento em cada subdivisão. Tal processo é feito $lg (n)$ vezes, gerando uma complexidade de $\theta(nlgn)$.
+Podemos observar que todas as curvas de todos os gráficos, exceto os de complexidade de tempo sem a interpolação dos mínimos quadrados(Gráficos \ref{fig:MergePlot2A},\ref{fig:MergePlot2OC},\ref{fig:MergePlot2OD},\ref{fig:MergePlot2POC},\ref{fig:MergePlot2POD}), apresentaram uma correspondência forte com a curva da função $F(x) = x^2$, o que nos permite concluir que, dada a complexidade de tempo do algoritmo Merge Sort por $G(x)$ então $F(x) = c * G(x)$ sendo que $c$ é uma constante maior que zero e $x > x_0$. Portanto, o Merge Sort é $\theta(nlgn)$.
 
 \chapter{Citações e referências bibliográficas}
 
