@@ -182,7 +182,7 @@ literate={â}{{\^{a}}}1  % para formatar corretamente os acentos do Português a
 
 % ---------------------------------------------------------------------------- %
 
-\title{Análise de Complexidade de Tempo do Método Merge Sort}
+\title{Análise de Complexidade de Tempo do Método Quick Sort}
 \date{}
 \author{Eduardo Costa de Paiva \\
 \texttt{\small \url{eduardocspv@gmail.com}}\\
@@ -218,9 +218,9 @@ Universidade Federal de Uberlândia
 \setlength{\parskip}{0.15in} % espaçamento entre paragráfos
 
 \chapter{Introdução}
-Este documento foi feito com o intuito de exibir uma análise do algoritmo Merge Sort
+Este documento foi feito com o intuito de exibir uma análise do algoritmo Quick Sort
 com relação a tempo. Além disso, será feita uma comparação da curva de tempo do que se espera do
-algoritmo, ou seja, $O(nlgn)$ com o caso prático.
+algoritmo, ou seja, $O(nlgn)$ com melhor caso e $\theta(n^2)$ no pior caso.
 
 \section{Diretório}
 
@@ -247,7 +247,7 @@ tree --charset=ASCII -d
 |   |   `-- __pycache__
 |   |-- Insertion
 |   |   `-- __pycache__
-|   |-- Merge
+|   |-- Quick
 |   |   `-- __pycache__
 |   |-- Quick
 |   |   `-- __pycache__
@@ -263,7 +263,7 @@ tree --charset=ASCII -d
     |   |-- Counting
     |   |-- Heap
     |   |-- Insertion
-    |   |-- Merge
+    |   |-- Quick
     |   |-- Quick
     |   |-- Radix
     |   `-- Selection
@@ -272,7 +272,7 @@ tree --charset=ASCII -d
     |-- Relatorio_Counting
     |-- Relatorio_Heap
     |-- Relatorio_Insertion
-    |-- Relatorio_Merge
+    |-- Relatorio_Quick
     |-- Relatorio_Selection
     `-- Resultados
         |-- Bubble
@@ -280,7 +280,7 @@ tree --charset=ASCII -d
         |-- Counting
         |-- Heap
         |-- Insertion
-        |-- Merge
+        |-- Quick
         |-- Quick
         `-- Selection
 
@@ -288,12 +288,12 @@ tree --charset=ASCII -d
 \end{terminal}
 
 \section{Códigos de programas}
-Seguem os códigos utilizados na análise de tempo do algoritmo Merge Sort.
+Seguem os códigos utilizados na análise de tempo do algoritmo Quick Sort.
 \begin{enumerate}
 
-\item MergeSort.py:
-Disponível na Listagem~\ref{arq:MergeSort}.
-\lstinputlisting[caption={MergeSort.py \label{arq:MergeSort}}]{../../Codigos/Merge/MergeSort.py}
+\item QuickSort.py:
+Disponível na Listagem~\ref{arq:QuickSort}.
+\lstinputlisting[caption={QuickSort.py \label{arq:QuickSort}}]{../../Codigos/Quick/QuickSort.py}
 
 \item testeGeneric.py
 Disponível na Listagem ~\ref{arq:testeGeneric}
@@ -311,59 +311,59 @@ Disponível na Listagem~\ref{arq:monitor}
 
 \chapter{Gráficos}
 
-Seguem os Gráficos utilizadas no processo de análise do método Merge Sort:
+Seguem os Gráficos utilizadas no processo de análise do método Quick Sort:
 \begin{enumerate}
 
 	\item Para um vetor aleatório
 	\begin{enumerate}
-		\item Complexidade de custo do método Merge Sort disponível na lista de imagens ~\ref{fig:MergePlot1A}.
+		\item Complexidade de custo do método Quick Sort disponível na lista de imagens ~\ref{fig:QuickPlot1A}.
 		\begin{figure}[!h]
 			\centering
-			\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_1_aleatorio.png}
-			\caption{Complexidade de custo do método Merge Sort (Vetor Aleatório) \label{fig:MergePlot1A}}
+			\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_1_aleatorio.png}
+			\caption{Complexidade de custo do método Quick Sort (Vetor Aleatório) \label{fig:QuickPlot1A}}
 		\end{figure}
 
 
-		\item Complexidade de tempo do método Merge Sort disponível na lista de imagens ~\ref{fig:MergePlot2A}.
+		\item Complexidade de tempo do método Quick Sort disponível na lista de imagens ~\ref{fig:QuickPlot2A}.
 		\begin{figure}[!h]
 			\centering
-			\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_2_aleatorio.png}
-			\caption{Complexidade de tempo do método Merge Sort (Vetor Aleatório)\label{fig:MergePlot2A}}
+			\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_2_aleatorio.png}
+			\caption{Complexidade de tempo do método Quick Sort (Vetor Aleatório)\label{fig:QuickPlot2A}}
 		\end{figure}
 
 
-		\item Complexidade de tempo do método Merge Sort com mínimos quadrados disponível na lista de imagens ~\ref{fig:MergePlot3A}.
+		\item Complexidade de tempo do método Quick Sort com mínimos quadrados disponível na lista de imagens ~\ref{fig:QuickPlot3A}.
 		\begin{figure}[!h]
 			\centering
-			\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_3_aleatorio.png}
-			\caption{Complexidade de tempo do método Merge Sort com mínimos quadrados (Vetor Aleatório) \label{fig:MergePlot3A}}
+			\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_3_aleatorio.png}
+			\caption{Complexidade de tempo do método Quick Sort com mínimos quadrados (Vetor Aleatório) \label{fig:QuickPlot3A}}
 		\end{figure}
 
 	\end{enumerate}
 
 	\item Para um vetor ordenado crescente
 		\begin{enumerate}
-			\item Complexidade de custo do método Merge Sort disponível na lista de imagens ~\ref{fig:MergePlot1OC}.
+			\item Complexidade de custo do método Quick Sort disponível na lista de imagens ~\ref{fig:QuickPlot1OC}.
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_1_ordenado_crescente.png}
-				\caption{Complexidade de custo do método Merge Sort (Vetor Ordenado Crescente)\label{fig:MergePlot1OC}}
+				\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_1_ordenado_crescente.png}
+				\caption{Complexidade de custo do método Quick Sort (Vetor Ordenado Crescente)\label{fig:QuickPlot1OC}}
 			\end{figure}
 
 
-			\item Complexidade de tempo do método Merge Sort disponível na lista de imagens ~\ref{fig:MergePlot2OC}.
+			\item Complexidade de tempo do método Quick Sort disponível na lista de imagens ~\ref{fig:QuickPlot2OC}.
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_2_ordenado_crescente.png}
-				\caption{Complexidade de tempo do método Merge Sort (Vetor Ordenado Crescente) \label{fig:MergePlot2OC}}
+				\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_2_ordenado_crescente.png}
+				\caption{Complexidade de tempo do método Quick Sort (Vetor Ordenado Crescente) \label{fig:QuickPlot2OC}}
 			\end{figure}
 
 
-			\item Complexidade de tempo do método Merge Sort com mínimos quadrados disponível na lista de imagens ~\ref{fig:MergePlot3OC}.
+			\item Complexidade de tempo do método Quick Sort com mínimos quadrados disponível na lista de imagens ~\ref{fig:QuickPlot3OC}.
 			\begin{figure}[!h]
 				\centering
-				\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_3_ordenado_crescente.png}
-				\caption{Complexidade de tempo do método Merge Sort com mínimos quadrados (Vetor Ordenado Crescente) \label{fig:MergePlot3OC}}
+				\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_3_ordenado_crescente.png}
+				\caption{Complexidade de tempo do método Quick Sort com mínimos quadrados (Vetor Ordenado Crescente) \label{fig:QuickPlot3OC}}
 			\end{figure}
 
 		\end{enumerate}
@@ -372,27 +372,27 @@ Seguem os Gráficos utilizadas no processo de análise do método Merge Sort:
 
 		\item Para um vetor ordenado decrescente
 				\begin{enumerate}
-					\item Complexidade de custo do método Merge Sort disponível na lista de imagens ~\ref{fig:MergePlot1OD}.
+					\item Complexidade de custo do método Quick Sort disponível na lista de imagens ~\ref{fig:QuickPlot1OD}.
 					\begin{figure}[!h]
 						\centering
-						\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_1_ordenado_decrescente.png}
-						\caption{Complexidade de custo do método Merge Sort (Vetor Ordenado Decrescente) \label{fig:MergePlot1OD}}
+						\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_1_ordenado_decrescente.png}
+						\caption{Complexidade de custo do método Quick Sort (Vetor Ordenado Decrescente) \label{fig:QuickPlot1OD}}
 					\end{figure}
 
 
-					\item Complexidade de tempo do método Merge Sort disponível na lista de imagens ~\ref{fig:MergePlot2OD}.
+					\item Complexidade de tempo do método Quick Sort disponível na lista de imagens ~\ref{fig:QuickPlot2OD}.
 					\begin{figure}[!h]
 						\centering
-						\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_2_ordenado_decrescente.png}
-						\caption{Complexidade de tempo do método Merge Sort (Vetor Ordenado Decrescente) \label{fig:MergePlot2OD}}
+						\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_2_ordenado_decrescente.png}
+						\caption{Complexidade de tempo do método Quick Sort (Vetor Ordenado Decrescente) \label{fig:QuickPlot2OD}}
 					\end{figure}
 
 
-					\item Complexidade de tempo do método Merge Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:MergePlot3OD}.
+					\item Complexidade de tempo do método Quick Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:QuickPlot3OD}.
 					\begin{figure}[!h]
 						\centering
-						\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_3_ordenado_decrescente.png}
-						\caption{Complexidade de tempo do método Merge Sort com mínimos quadrados (Vetor Ordenado Decrescente) \label{fig:MergePlot3OD}}
+						\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_3_ordenado_decrescente.png}
+						\caption{Complexidade de tempo do método Quick Sort com mínimos quadrados (Vetor Ordenado Decrescente) \label{fig:QuickPlot3OD}}
 					\end{figure}
 
 				\end{enumerate}
@@ -400,27 +400,27 @@ Seguem os Gráficos utilizadas no processo de análise do método Merge Sort:
 
 			\item Para um vetor parcialmente ordenado crescente
 							\begin{enumerate}
-								\item Complexidade de custo do método Merge Sort disponível na lista de imagens ~\ref{fig:MergePlot1POC}.
+								\item Complexidade de custo do método Quick Sort disponível na lista de imagens ~\ref{fig:QuickPlot1POC}.
 								\begin{figure}[!h]
 									\centering
-									\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_1_parcialmente_ordenado_crescente.png}
-									\caption{Complexidade de custo do método Merge Sort (Vetor Parcialmente Ordenado Crescente) \label{fig:MergePlot1POC}}
+									\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_1_parcialmente_ordenado_crescente.png}
+									\caption{Complexidade de custo do método Quick Sort (Vetor Parcialmente Ordenado Crescente) \label{fig:QuickPlot1POC}}
 								\end{figure}
 
 
-								\item Complexidade de tempo do método Merge Sort disponível na lista de imagens ~\ref{fig:MergePlot2POC}.
+								\item Complexidade de tempo do método Quick Sort disponível na lista de imagens ~\ref{fig:QuickPlot2POC}.
 								\begin{figure}[!h]
 									\centering
-									\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_2_parcialmente_ordenado_crescente.png}
-									\caption{Complexidade de tempo do método Merge Sort (Vetor Parcialmente Ordenado Crescente) \label{fig:MergePlot2POC}}
+									\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_2_parcialmente_ordenado_crescente.png}
+									\caption{Complexidade de tempo do método Quick Sort (Vetor Parcialmente Ordenado Crescente) \label{fig:QuickPlot2POC}}
 								\end{figure}
 
 
-								\item Complexidade de tempo do método Merge Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:MergePlot3POC}.
+								\item Complexidade de tempo do método Quick Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:QuickPlot3POC}.
 								\begin{figure}[!h]
 									\centering
-									\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_3_parcialmente_ordenado_crescente.png}
-									\caption{Complexidade de tempo do método Merge Sort com mínimos quadrados (Vetor Parcialmente Ordenado Crescente) \label{fig:MergePlot3POC}}
+									\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_3_parcialmente_ordenado_crescente.png}
+									\caption{Complexidade de tempo do método Quick Sort com mínimos quadrados (Vetor Parcialmente Ordenado Crescente) \label{fig:QuickPlot3POC}}
 								\end{figure}
 
 							\end{enumerate}
@@ -428,27 +428,27 @@ Seguem os Gráficos utilizadas no processo de análise do método Merge Sort:
 
 			\item Para um vetor parcialmente ordenado decrescente
 										\begin{enumerate}
-											\item Complexidade de custo do método Merge Sort disponível na lista de imagens ~\ref{fig:MergePlot1POD}.
+											\item Complexidade de custo do método Quick Sort disponível na lista de imagens ~\ref{fig:QuickPlot1POD}.
 											\begin{figure}[!h]
 												\centering
-												\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_1_parcialmente_ordenado_decrescente.png}
-												\caption{Complexidade de custo do método Merge Sort (Vetor Parcialmente Ordenado Decrescente) \label{fig:MergePlot1POD}}
+												\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_1_parcialmente_ordenado_decrescente.png}
+												\caption{Complexidade de custo do método Quick Sort (Vetor Parcialmente Ordenado Decrescente) \label{fig:QuickPlot1POD}}
 											\end{figure}
 
 
-											\item Complexidade de tempo do método Merge Sort disponível na lista de imagens ~\ref{fig:MergePlot2POD}.
+											\item Complexidade de tempo do método Quick Sort disponível na lista de imagens ~\ref{fig:QuickPlot2POD}.
 											\begin{figure}[!h]
 												\centering
-												\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_2_parcialmente_ordenado_decrescente.png}
-												\caption{Complexidade de tempo do método Merge Sort (Vetor Parcialmente Ordenado Decrescente) \label{fig:MergePlot2POD}}
+												\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_2_parcialmente_ordenado_decrescente.png}
+												\caption{Complexidade de tempo do método Quick Sort (Vetor Parcialmente Ordenado Decrescente) \label{fig:QuickPlot2POD}}
 											\end{figure}
 
 
-											\item Complexidade de tempo do método Merge Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:MergePlot3POD}.
+											\item Complexidade de tempo do método Quick Sort com mínimos quadrados disponível na lista de imagens  ~\ref{fig:QuickPlot3POD}.
 											\begin{figure}[!h]
 												\centering
-												\includegraphics[scale=0.6]{../imagens/Merge/merge_plot_3_parcialmente_ordenado_decrescente.png}
-												\caption{Complexidade de tempo do método Merge Sort com mínimos quadrados (Vetor Parcialmente Ordenado Decrescente) \label{fig:MergePlot3POD}}
+												\includegraphics[scale=0.6]{../imagens/Quick/Quick_plot_3_parcialmente_ordenado_decrescente.png}
+												\caption{Complexidade de tempo do método Quick Sort com mínimos quadrados (Vetor Parcialmente Ordenado Decrescente) \label{fig:QuickPlot3POD}}
 											\end{figure}
 
 										\end{enumerate}
@@ -458,7 +458,7 @@ Seguem os Gráficos utilizadas no processo de análise do método Merge Sort:
 
 \chapter{Tabelas}
 
-Seguem as tabelas utilizadas para a análise do método Merge Sort.
+Seguem as tabelas utilizadas para a análise do método Quick Sort.
 
 \begin{table}[h]
   \centering
@@ -566,8 +566,8 @@ Seguem as tabelas utilizadas para a análise do método Merge Sort.
 
 \chapter{Análise}
 
-O algoritmo Merge Sort é um algoritmo de divisão e conquista que utiliza a função intercala, $\theta(n)$, que tem como objetivo ordenar as subdivisões estabelecidades pelo merge. Como a cada momento são feitas $n/2$ divisões e isso prossegue até termos um elemento em cada subdivisão. Tal processo é feito $lg (n)$ vezes, gerando uma complexidade de $\theta(nlgn)$.
-Podemos observar que todas as curvas de todos os gráficos, exceto os de complexidade de tempo sem a interpolação dos mínimos quadrados(Gráficos \ref{fig:MergePlot2A},\ref{fig:MergePlot2OC},\ref{fig:MergePlot2OD},\ref{fig:MergePlot2POC},\ref{fig:MergePlot2POD}), apresentaram uma correspondência forte com a curva da função $F(x) = x^2$, o que nos permite concluir que, dada a complexidade de tempo do algoritmo Merge Sort por $G(x)$ então $F(x) = c * G(x)$ sendo que $c$ é uma constante maior que zero e $x > x_0$. Portanto, o Merge Sort é $\theta(nlgn)$.
+O algoritmo Quick Sort é um algoritmo de divisão e conquista que utiliza a função particiona, $\theta(n)$, que tem como objetivo ordenar as partições. O algoritmo quicksort possui o melhor caso em $\theta(nlgn)$ e pior caso em $\theta(n^2)$. O pior caso ocorre quando o vetor já está ordenado.
+Podemos observar que todas as curvas de todos os gráficos, exceto os de complexidade de tempo sem a interpolação dos mínimos quadrados(Gráficos \ref{fig:QuickPlot2A},\ref{fig:QuickPlot2OC},\ref{fig:QuickPlot2OD},\ref{fig:QuickPlot2POC},\ref{fig:QuickPlot2POD}), apresentaram uma correspondência forte com a curva da função $F(x) = x^2$, o que nos permite concluir que, dada a complexidade de tempo do algoritmo Quick Sort por $G(x)$ então $F(x) = c * G(x)$ sendo que $c$ é uma constante maior que zero e $x > x_0$. Portanto, o Quick Sort é $\theta(nlgn)$.
 
 \chapter{Citações e referências bibliográficas}
 	\begin{thebibliography}{1}
