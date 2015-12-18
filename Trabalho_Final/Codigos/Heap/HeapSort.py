@@ -1,10 +1,10 @@
-@profile
+#@profile
 def trocaElementos(A,x,y):
     aux = A[y]
     A[y] = A[x]
     A[x] = aux
 
-@profile
+#@profile
 def maxHeapify(A,n,i):
     esquerda = 2*i + 1 #Pq o indice começa de 0
     direita = 2*i +2 #Pq o indice começa de 0
@@ -19,7 +19,7 @@ def maxHeapify(A,n,i):
         trocaElementos(A,i,maior)
         maxHeapify(A,n,maior)
 
-@profile
+#@profile
 def constroiMaxHeap(A,n):
     for i in range(n // 2, -1, -1):
         maxHeapify(A,n,i)
@@ -38,3 +38,6 @@ def heapSort(A):
 #lista = [13,46,17,34,41,15,14,23,30,21,10,12,21]
 #heapSort(lista, 13)
 #print(lista)
+
+
+#heapSort([i for i in range(524288)])

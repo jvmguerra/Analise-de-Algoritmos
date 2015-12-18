@@ -1,7 +1,13 @@
 import math
+import sys
+import gc
 
-@profile
+#sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final')
+#from memoria import *
+
+#@profile
 def intercala(A,p,q,r):
+	#print("antes: ",  memory_usage_resource())
 	B = [0] *len(A)
 	for i in range(p,(q+1)):
 		B[i] = A[i]
@@ -10,6 +16,7 @@ def intercala(A,p,q,r):
 
 	i = p
 	j = r
+	#print("depois", memory_usage_resource())
 
 	for k in range (p,(r+1)):
 		if(B[i] <= B[j]):
@@ -22,10 +29,11 @@ def intercala(A,p,q,r):
 @profile
 def merge(A):
 	mergeSort(A,0,len(A)-1)
-	return A
+
+	#return A
 
 
-@profile
+#@profile
 def mergeSort(A,esquerda,direita):
 	if(esquerda<direita):
 		meio = math.floor((esquerda+direita)/2)
@@ -34,8 +42,15 @@ def mergeSort(A,esquerda,direita):
 		intercala(A,esquerda,meio,direita)
 
 
-#A = [3,20,52,2,54,23,17,18,1,4]
 
+#if __name__ == '__main__':
+#	gc.disable()
+#	A = [i for i in range(10000)]
+#	merge(A)
+#	print(merge(A))
+#	gc.enable()
 
+#A = [i for i in range(10000)]
+#merge(A)
 #Para criar uma lista preenchida com 0's e que possua tamanho de A basta
-#print(mergeSort(A))
+#print(merge(A))

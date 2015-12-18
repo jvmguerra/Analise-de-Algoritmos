@@ -16,7 +16,7 @@ sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/Codigos/He
 sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap') ## adicionei o resultado do executa_teste
 
 
-def executa_teste(arqteste, arqsaida,  intervalo,nlin=26,nlin2=30,nlin3=32,tempo=[3,15,36,47]):
+def executa_teste(arqteste, arqsaida,  intervalo,tempo=[3,17,31,56]):
     """Executa uma sequência de testes contidos em arqteste, com:
        arqsaida: nome do arquivo de saída, ex: tBolha.dat
        nlin: número da linha no arquivo gerado pelo line_profiler contendo
@@ -24,41 +24,41 @@ def executa_teste(arqteste, arqsaida,  intervalo,nlin=26,nlin2=30,nlin3=32,tempo
        intervalo: tamanhos dos vetores: Ex: 2 ** np.arange(5,10)
     """
     f = open(arqsaida,mode='w', encoding='utf-8')
-    f.write('#      n    comparações     tempo(s)\n')
+    f.write('#      n       tempo(s)\n')
 
     for n in intervalo:
         cmd = ' '.join(["kernprof -l -v", "testeGeneric.py", str(n)])
         str_saida = subprocess.check_output(cmd, shell=True).decode('utf-8')
         linhas = str_saida.split('\n')
         #for i in linhas:
-    #        print(i)
+        #    print(i)
         #print (linhas)
 
-    #    print(linhas[tempo[0]].split()[2])
+        #print(linhas[tempo[0]].split()[2])
 
 
-        tempo_total = float(linhas[tempo[0]].split()[2]) + float(linhas[tempo[1]].split()[2]) +float(linhas[tempo[2]].split()[2]) + float(linhas[tempo[3]].split()[2])
+        tempo_total = float(linhas[tempo[0]].split()[2]) + float(linhas[tempo[1]].split()[2]) + float(linhas[tempo[2]].split()[2]) +float(linhas[tempo[3]].split()[2])
         unidade_tempo = float(linhas[3].split()[2])
-        lcomp = int(linhas[nlin].split()[2]) + int(linhas[nlin2].split()[2]) + int(linhas[nlin3].split()[2])
+        #lcomp = int(linhas[nlin].split()[2]) + int(linhas[nlin2].split()[2])
 
-        #print(linhas[nlin].split()[2])
-
-        #print(linhas[nlin2].split()[2])
-        #print(linhas[nlin3].split()[2])
+        #print(linhas[tempo[0]].split()[2])
+        #print(linhas[tempo[1]].split()[2])
+        #print(linhas[tempo[2]].split()[2])
+        #print(linhas[tempo[3]].split()[2])
 
         #print ("unidade tempo: ",unidade_tempo )
         #print("lcomp: ",lcomp)
         #print("tempo total",tempo_total)
 
         #num_comps = int(lcomp[1])
-        str_res = '{:>8} {:>13}  {:13.6f}'.format(n, lcomp ,tempo_total)
+        str_res = '{:>8}  {:13.6f}'.format(n ,tempo_total)
         print(str_res)
         f.write(str_res + '\n')
         lcomp = 0
     f.close()
-    shutil.move("tHeap_vetor_ordenado_crescente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_crescente.dat")
+    shutil.move("tHeap_vetor_ordenado_decrescente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_decrescente.dat")
 
-executa_teste("testeGeneric.py", "tHeap_vetor_ordenado_crescente.dat", 2 ** np.arange(5,17))
+#executa_teste("testeGeneric.py", "tHeap_vetor_ordenado_decrescente.dat", 2 ** np.arange(5,20))
 
 def executa_teste_memoria(arqteste, arqsaida, nlin, intervalo):
     """Executa uma sequência de testes contidos em arqteste, com:
@@ -76,13 +76,12 @@ def executa_teste_memoria(arqteste, arqsaida, nlin, intervalo):
         str_saida = subprocess.check_output(cmd, shell=True).decode('utf-8')
 
         linhas = str_saida.split('\n')
-        #for i in linhas:
-        #    print(i)
+        for i in linhas:
+            print(i)
 
         print ("Linhas:",linhas[1])
 
         unidade_tempo = float(linhas[1].split()[2])
-
 
         str_res = '{:>8} {:>13} {:13.6f}'.format(n, n, n)
         print(str_res)
@@ -93,10 +92,10 @@ def executa_teste_memoria(arqteste, arqsaida, nlin, intervalo):
 #executa_teste_memoria("testeGeneric.py", "tHeap_memoria.dat", 14, 2 ** np.arange(5,15))
 
 def plota_teste1(arqsaida):
-    n, c, t = np.loadtxt(arqsaida, unpack=True)
+    n, c,t = np.loadtxt(arqsaida, unpack=True)
     #print("n: ",n,"\nc: ",c,"\nt: ",t)
     #n eh o tamanho da entrada , c eh o tanto de comparações e t eh o tempo gasto
-    plt.plot(n, n * np.log2(n), label='$n * log_2(n)$')  ## custo esperado bubble Sort
+    plt.plot(n, n , label='$n$')  ## custo esperado bubble Sort
     plt.plot(n, c, 'ro', label='heap sort')
     # Posiciona a legenda
     plt.legend(loc='upper left')
@@ -108,14 +107,14 @@ def plota_teste1(arqsaida):
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Número de comparações')
 
-    plt.savefig('relatorio/imagens/Heap/heap_plot_1_ordenado_crescente.png')
+    plt.savefig('relatorio/imagens/Heap/heap_plot_1_ordenado_decrescente.png')
     plt.show()
 
 
 
 def plota_teste2(arqsaida):
-    n, c, t = np.loadtxt(arqsaida, unpack=True)
-    plt.plot(n, n * np.log2(n), label='$n * log_2(n)$')
+    n, t = np.loadtxt(arqsaida, unpack=True)
+    plt.plot(n, n, label='$n $')
     plt.plot(n, t, 'ro', label='heap sort')
 
     # Posiciona a legenda
@@ -128,14 +127,14 @@ def plota_teste2(arqsaida):
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Heap/heap_plot_2_ordenado_crescente.png')
+    plt.savefig('relatorio/imagens/Heap/heap_plot_2_ordenado_decrescente.png')
     plt.show()
 
 
 
 
 def plota_teste3(arqsaida):
-    n, c, t = np.loadtxt(arqsaida, unpack=True)
+    n, t = np.loadtxt(arqsaida, unpack=True)
 
     # Calcula os coeficientes de um ajuste a um polinômio de grau 2 usando
     # o método dos mínimos quadrados
@@ -155,12 +154,12 @@ def plota_teste3(arqsaida):
     plt.xlabel('Tamanho do vetor (n)')
     plt.ylabel('Tempo(s)')
 
-    plt.savefig('relatorio/imagens/Heap/heap_plot_3_ordenado_crescente.png')
+    plt.savefig('relatorio/imagens/Heap/heap_plot_3_ordenado_decrescente.png')
     plt.show()
 
-plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_crescente.dat")
-plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_crescente.dat")
-plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_crescente.dat")
+#plota_teste1("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_decrescente.dat")
+#plota_teste2("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_decrescente.dat")
+#plota_teste3("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_ordenado_decrescente.dat")
 
 
 def plota_teste4(arqsaida):
@@ -212,3 +211,32 @@ def plota_teste5(arqsaida):
 
     plt.savefig('bubble5.png')
     plt.show()
+
+
+
+
+def nlogfit(x,y):
+    """ Ajusta os pares de pontos (xi,yi) a f(x)= a*n*ln(x) + b usando o
+        método dos minimos quadrados.
+        Retorna o par de coeficientes em uma lista [a,b]
+    """
+    z = x * np.log(x)
+    coefs = np.polyfit(z,y,1)
+    return coefs
+
+def plota_nlogfit(arqsaida):
+    n, c, t = np.loadtxt(arqsaida, unpack=True)
+    x = n
+    y = t
+    a,b = nlogfit(x,y)
+    legenda_ajuste = "${:.9f} n*\\ln(n) + {:.9f}$".format(a, b)
+    plt.plot(x, a * x * np.log(x) + b,"-", label=legenda_ajuste)
+    plt.plot(x,y,"ro",label="heap")
+    plt.legend(loc='upper left')
+    plt.title('Análise da complexidade de \ntempo do método da Heap Sort com mínimos quadrados usando $ n* log_2(n)$')
+    plt.xlabel('Tamanho do vetor (n)')
+    plt.ylabel('Tempo(s)')
+    plt.savefig('relatorio/imagens/Heap/heap_plot_3_aleatorio.png')
+    plt.show()
+
+plota_nlogfit("/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Heap/tHeap_vetor_aleatorio.dat")

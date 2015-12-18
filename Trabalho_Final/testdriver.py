@@ -46,7 +46,7 @@ def executa_teste(arqteste, arqsaida, nlin, intervalo):
         print(str_res)
         f.write(str_res + '\n')
     f.close()
-    shutil.move("tBucket_vetor_parcialmente_ordenado_decrescente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bucket/tBucket_vetor_parcialmente_ordenado_decrescente.dat")
+    #shutil.move("tBucket_vetor_parcialmente_ordenado_decrescente.dat", "/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final/relatorio/Resultados/Bucket/tBucket_vetor_parcialmente_ordenado_decrescente.dat")
 
 executa_teste("testeGeneric.py", "tBucket_vetor_parcialmente_ordenado_decrescente.dat", 46, 2 ** np.arange(5,15))
 
