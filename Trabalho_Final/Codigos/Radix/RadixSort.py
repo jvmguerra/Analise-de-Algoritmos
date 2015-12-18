@@ -7,7 +7,7 @@ def radix(A):
     d = _contaDigitos(maior)
     radixSort(A, n, d)
 
-@profile
+#@profile
 def radixSort(A, n, d):
     exp = 1
     maior = max(A)
@@ -16,8 +16,7 @@ def radixSort(A, n, d):
         exp *= 10
 
 
-@profile
-# função countingsort adaptada
+#@profile# função countingsort adaptada
 def _countingSort(A, k):
     contador = [0] * 10  # Contador é o histograma
     B = [0] * len(A)
@@ -35,7 +34,7 @@ def _countingSort(A, k):
     for i in range(0, n):
         A[i] = B[i]
 
-@profile
+#@profile
 def _contaDigitos(valor):
     digitos = 0
     while (valor != 0):

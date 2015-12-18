@@ -1,8 +1,8 @@
 import sys
 
-sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final')
+#sys.path.append('/home/gmarson/Git/AnaliseDeAlgoritmos/Trabalho_Final')
 
-from memoria import *
+#from memoria import *
 
 @profile
 def selectionSort(A):
