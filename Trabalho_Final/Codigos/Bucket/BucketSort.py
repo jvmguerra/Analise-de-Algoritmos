@@ -4,7 +4,7 @@ def bucket_sort(floats):
     buckets = [ [] for _ in range(len(floats)) ]
     for num in floats:
         i = int(len(floats) * num)
-        print(buckets)
+        #print(buckets)
         buckets[i].append(num)
 
     result = []
@@ -16,7 +16,7 @@ def bucket_sort(floats):
 
 # colocamos a mesma versão do Insertion Sort, que já havíamos feito, aqui apenas
 # para facilitar a análise de complexidade do Bucket Sort
-@profile
+
 def _insertion_sort(lista):
 	for j in range(1,len(lista)):
 		chave = lista[j]
