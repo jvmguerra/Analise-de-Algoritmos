@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.30)  18 DEC 2015 13:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.30)  18 DEC 2015 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**RelatorioBucket.tex
-(./RelatorioBucket.tex
+**RelatorioQuick.tex
+(./RelatorioQuick.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 3 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
@@ -692,10 +692,10 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 \f@ncyO@orf=\skip57
 )
 \@indexfile=\write3
-\openout3 = `RelatorioBucket.idx'.
+\openout3 = `RelatorioQuick.idx'.
 
 
-Writing index file RelatorioBucket.idx
+Writing index file RelatorioQuick.idx
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count119
 \lst@gtempboxa=\box28
@@ -724,8 +724,8 @@ Package: listings 2013/08/26 1.5b (Carsten Heinz)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-(./RelatorioBucket.aux)
-\openout1 = `RelatorioBucket.aux'.
+(./RelatorioQuick.aux)
+\openout1 = `RelatorioQuick.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 199.
 LaTeX Font Info:    ... okay on input line 199.
@@ -748,7 +748,6 @@ LaTeX Font Info:    Try loading font information for TS1+cmr on input line 199.
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 199.
-
 babelbib: Set bibliography fall-back language to brazil
 (/usr/share/texlive/texmf-dist/tex/latex/babelbib/portuguese.bdf
 File: portuguese.bdf 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH
@@ -865,9 +864,9 @@ LaTeX Info: Redefining \ref on input line 199.
 LaTeX Info: Redefining \pageref on input line 199.
 LaTeX Info: Redefining \nameref on input line 199.
 
-(./RelatorioBucket.out) (./RelatorioBucket.out)
+(./RelatorioQuick.out) (./RelatorioQuick.out)
 \@outlinefile=\write4
-\openout4 = `RelatorioBucket.out'.
+\openout4 = `RelatorioQuick.out'.
 
 \c@lstlisting=\count134
 
@@ -889,9 +888,9 @@ Package babel Info: Redefining portuges shorthand "|
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 203.
- (./RelatorioBucket.lof)
+ (./RelatorioQuick.lof)
 \tf@lof=\write5
-\openout5 = `RelatorioBucket.lof'.
+\openout5 = `RelatorioQuick.lof'.
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 204.
@@ -903,9 +902,9 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 204.
 
-(./RelatorioBucket.lot)
+(./RelatorioQuick.lot)
 \tf@lot=\write6
-\openout6 = `RelatorioBucket.lot'.
+\openout6 = `RelatorioQuick.lot'.
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 205.
@@ -913,9 +912,9 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 205.
  [3
 
-] (./RelatorioBucket.lol)
+] (./RelatorioQuick.lol)
 \tf@lol=\write7
-\openout7 = `RelatorioBucket.lol'.
+\openout7 = `RelatorioQuick.lol'.
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 210.
@@ -923,14 +922,15 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 210.
  [4
 
-] (./RelatorioBucket.toc)
+] (./RelatorioQuick.toc)
 \tf@toc=\write8
-\openout8 = `RelatorioBucket.toc'.
+\openout8 = `RelatorioQuick.toc'.
 
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 220.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 220.
+
 [5
 
 ]
@@ -947,7 +947,7 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10> not available
 (Font)              Font shape `T1/pcr/b/n' tried instead on input line 232.
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 242.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 241.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
@@ -961,15 +961,18 @@ Package babel Info: Redefining portuges shorthand "|
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 282.
+(babel)             in language  on input line 290.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 288.
+nput line 296.
 
-Overfull \hbox (35.3747pt too wide) in paragraph at lines 288--288
+Overfull \hbox (35.3747pt too wide) in paragraph at lines 296--296
 [][][][][][][] 
  []
 
-(../../Codigos/Bucket/BucketSort.py
+(../../Codigos/Merge/MergeSort.py
+LaTeX Font Info:    Font shape `TS1/pcr/bx/n' in size <10> not available
+(Font)              Font shape `TS1/pcr/b/n' tried instead on input line 5.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -977,182 +980,282 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 27.
+(babel)             in language  on input line 17.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 27.
+(babel)             in language  on input line 17.
 [7])
-Overfull \hbox (35.3747pt too wide) in paragraph at lines 292--292
+Overfull \hbox (35.3747pt too wide) in paragraph at lines 300--300
 [][][][][][][] 
  []
 
-(../../testeGeneric.py)
-Overfull \hbox (35.3747pt too wide) in paragraph at lines 296--296
+(../../testeGeneric.py
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 10.
+ [8])
+Overfull \hbox (35.3747pt too wide) in paragraph at lines 304--304
 [][][][][][][] 
  []
 
 (../../monitor.py
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 12.
+(babel)             in language  on input line 33.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 12.
- [8])
+(babel)             in language  on input line 33.
+ [9])
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 304.
+(babel)             in language  on input line 312.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 304.
- [9]
+(babel)             in language  on input line 312.
+ [10]
 Cap\'{\i }tulo 2.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 304.
-<../imagens/Bucket/Bucket_plot_2_aleatorio.png, id=343, 578.16pt x 433.62pt>
-File: ../imagens/Bucket/Bucket_plot_2_aleatorio.png Graphic file (type png)
+(babel)             in language  on input line 312.
+<../imagens/Merge/merge_plot_1_aleatorio.png, id=395, 578.16pt x 433.62pt>
+File: ../imagens/Merge/merge_plot_1_aleatorio.png Graphic file (type png)
 
-<use ../imagens/Bucket/Bucket_plot_2_aleatorio.png>
-Package pdftex.def Info: ../imagens/Bucket/Bucket_plot_2_aleatorio.png used on 
-input line 316.
+<use ../imagens/Merge/merge_plot_1_aleatorio.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_1_aleatorio.png used on in
+put line 322.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
 
-<../imagens/Bucket/Bucket_plot_3_aleatorio.png, id=346, 578.16pt x 433.62pt>
-File: ../imagens/Bucket/Bucket_plot_3_aleatorio.png Graphic file (type png)
+<../imagens/Merge/merge_plot_2_aleatorio.png, id=398, 578.16pt x 433.62pt>
+File: ../imagens/Merge/merge_plot_2_aleatorio.png Graphic file (type png)
 
-<use ../imagens/Bucket/Bucket_plot_3_aleatorio.png>
-Package pdftex.def Info: ../imagens/Bucket/Bucket_plot_3_aleatorio.png used on 
-input line 324.
+<use ../imagens/Merge/merge_plot_2_aleatorio.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_2_aleatorio.png used on in
+put line 330.
+(pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../imagens/Merge/merge_plot_3_aleatorio.png, id=400, 578.16pt x 433.62pt>
+File: ../imagens/Merge/merge_plot_3_aleatorio.png Graphic file (type png)
+
+<use ../imagens/Merge/merge_plot_3_aleatorio.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_3_aleatorio.png used on in
+put line 338.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<../imagens/Bucket/Bucket_plot_2_ordenado_crescente.png, id=348, 578.16pt x 433
+<../imagens/Merge/merge_plot_1_ordenado_crescente.png, id=402, 578.16pt x 433.6
+2pt>
+File: ../imagens/Merge/merge_plot_1_ordenado_crescente.png Graphic file (type p
+ng)
+ <use ../imagens/Merge/merge_plot_1_ordenado_crescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_1_ordenado_crescente.png u
+sed on input line 349.
+(pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 352.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 352.
+ [11
+
+ <../imagens/Merge/merge_plot_1_aleatorio.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../imagens/Merge/merge_plot_2_ordenado_crescente.png, id=416, 578.16pt x 433.6
+2pt>
+File: ../imagens/Merge/merge_plot_2_ordenado_crescente.png Graphic file (type p
+ng)
+ <use ../imagens/Merge/merge_plot_2_ordenado_crescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_2_ordenado_crescente.png u
+sed on input line 357.
+(pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../imagens/Merge/merge_plot_3_ordenado_crescente.png, id=418, 578.16pt x 433.6
+2pt>
+File: ../imagens/Merge/merge_plot_3_ordenado_crescente.png Graphic file (type p
+ng)
+ <use ../imagens/Merge/merge_plot_3_ordenado_crescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_3_ordenado_crescente.png u
+sed on input line 365.
+(pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 375.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 375.
+[12 <../imagens/Merge/merge_plot_2_aleatorio.png> <../imagens/Merge/merge_plot_
+3_aleatorio.png>]
+<../imagens/Merge/merge_plot_1_ordenado_decrescente.png, id=429, 578.16pt x 433
 .62pt>
-File: ../imagens/Bucket/Bucket_plot_2_ordenado_crescente.png Graphic file (type
+File: ../imagens/Merge/merge_plot_1_ordenado_decrescente.png Graphic file (type
  png)
- <use ../imagens/Bucket/Bucket_plot_2_ordenado_crescente.png>
-Package pdftex.def Info: ../imagens/Bucket/Bucket_plot_2_ordenado_crescente.png
- used on input line 336.
+ <use ../imagens/Merge/merge_plot_1_ordenado_decrescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_1_ordenado_decrescente.png
+ used on input line 378.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 339.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 339.
- [10
 
- <../imagens/Bucket/Bucket_plot_2_aleatorio.png>]
-<../imagens/Bucket/Bucket_plot_3_ordenado_crescente.png, id=361, 578.16pt x 433
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../imagens/Merge/merge_plot_2_ordenado_decrescente.png, id=431, 578.16pt x 433
 .62pt>
-File: ../imagens/Bucket/Bucket_plot_3_ordenado_crescente.png Graphic file (type
+File: ../imagens/Merge/merge_plot_2_ordenado_decrescente.png Graphic file (type
  png)
- <use ../imagens/Bucket/Bucket_plot_3_ordenado_crescente.png>
-Package pdftex.def Info: ../imagens/Bucket/Bucket_plot_3_ordenado_crescente.png
- used on input line 344.
+ <use ../imagens/Merge/merge_plot_2_ordenado_decrescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_2_ordenado_decrescente.png
+ used on input line 386.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<../imagens/Bucket/Bucket_plot_2_ordenado_decrescente.png, id=363, 578.16pt x 4
-33.62pt>
-File: ../imagens/Bucket/Bucket_plot_2_ordenado_decrescente.png Graphic file (ty
-pe png)
- <use ../imagens/Bucket/Bucket_plot_2_ordenado_decrescente.png>
-Package pdftex.def Info: ../imagens/Bucket/Bucket_plot_2_ordenado_decrescente.p
-ng used on input line 358.
+<../imagens/Merge/merge_plot_3_ordenado_decrescente.png, id=433, 578.16pt x 433
+.62pt>
+File: ../imagens/Merge/merge_plot_3_ordenado_decrescente.png Graphic file (type
+ png)
+ <use ../imagens/Merge/merge_plot_3_ordenado_decrescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_3_ordenado_decrescente.png
+ used on input line 394.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 361.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 361.
 
-[11 <../imagens/Bucket/Bucket_plot_3_aleatorio.png> <../imagens/Bucket/Bucket_p
-lot_2_ordenado_crescente.png>]
-<../imagens/Bucket/Bucket_plot_3_ordenado_decrescente.png, id=375, 578.16pt x 4
-33.62pt>
-File: ../imagens/Bucket/Bucket_plot_3_ordenado_decrescente.png Graphic file (ty
-pe png)
- <use ../imagens/Bucket/Bucket_plot_3_ordenado_decrescente.png>
-Package pdftex.def Info: ../imagens/Bucket/Bucket_plot_3_ordenado_decrescente.p
-ng used on input line 366.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 403.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 403.
+[13 <../imagens/Merge/merge_plot_1_ordenado_crescente.png> <../imagens/Merge/me
+rge_plot_2_ordenado_crescente.png>]
+<../imagens/Merge/merge_plot_1_parcialmente_ordenado_crescente.png, id=446, 578
+.16pt x 433.62pt>
+File: ../imagens/Merge/merge_plot_1_parcialmente_ordenado_crescente.png Graphic
+ file (type png)
+
+<use ../imagens/Merge/merge_plot_1_parcialmente_ordenado_crescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_1_parcialmente_ordenado_cr
+escente.png used on input line 406.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<../imagens/Bucket/Bucket_plot_2_parcialmente_ordenado_crescente.png, id=377, 5
+<../imagens/Merge/merge_plot_2_parcialmente_ordenado_crescente.png, id=448, 578
+.16pt x 433.62pt>
+File: ../imagens/Merge/merge_plot_2_parcialmente_ordenado_crescente.png Graphic
+ file (type png)
+
+<use ../imagens/Merge/merge_plot_2_parcialmente_ordenado_crescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_2_parcialmente_ordenado_cr
+escente.png used on input line 414.
+(pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../imagens/Merge/merge_plot_3_parcialmente_ordenado_crescente.png, id=450, 578
+.16pt x 433.62pt>
+File: ../imagens/Merge/merge_plot_3_parcialmente_ordenado_crescente.png Graphic
+ file (type png)
+
+<use ../imagens/Merge/merge_plot_3_parcialmente_ordenado_crescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_3_parcialmente_ordenado_cr
+escente.png used on input line 422.
+(pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 425.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 425.
+
+[14 <../imagens/Merge/merge_plot_3_ordenado_crescente.png> <../imagens/Merge/me
+rge_plot_1_ordenado_decrescente.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../imagens/Merge/merge_plot_1_parcialmente_ordenado_decrescente.png, id=462, 5
 78.16pt x 433.62pt>
-File: ../imagens/Bucket/Bucket_plot_2_parcialmente_ordenado_crescente.png Graph
+File: ../imagens/Merge/merge_plot_1_parcialmente_ordenado_decrescente.png Graph
 ic file (type png)
 
-<use ../imagens/Bucket/Bucket_plot_2_parcialmente_ordenado_crescente.png>
-Package pdftex.def Info: ../imagens/Bucket/Bucket_plot_2_parcialmente_ordenado_
-crescente.png used on input line 378.
+<use ../imagens/Merge/merge_plot_1_parcialmente_ordenado_decrescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_1_parcialmente_ordenado_de
+crescente.png used on input line 434.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 381.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 381.
 
-[12 <../imagens/Bucket/Bucket_plot_3_ordenado_crescente.png> <../imagens/Bucket
-/Bucket_plot_2_ordenado_decrescente.png>]
-<../imagens/Bucket/Bucket_plot_3_parcialmente_ordenado_crescente.png, id=388, 5
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../imagens/Merge/merge_plot_2_parcialmente_ordenado_decrescente.png, id=464, 5
 78.16pt x 433.62pt>
-File: ../imagens/Bucket/Bucket_plot_3_parcialmente_ordenado_crescente.png Graph
+File: ../imagens/Merge/merge_plot_2_parcialmente_ordenado_decrescente.png Graph
 ic file (type png)
 
-<use ../imagens/Bucket/Bucket_plot_3_parcialmente_ordenado_crescente.png>
-Package pdftex.def Info: ../imagens/Bucket/Bucket_plot_3_parcialmente_ordenado_
-crescente.png used on input line 386.
+<use ../imagens/Merge/merge_plot_2_parcialmente_ordenado_decrescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_2_parcialmente_ordenado_de
+crescente.png used on input line 442.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 445.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 445.
 
+[15 <../imagens/Merge/merge_plot_2_ordenado_decrescente.png> <../imagens/Merge/
+merge_plot_3_ordenado_decrescente.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<../imagens/Bucket/Bucket_plot_2_parcialmente_ordenado_decrescente.png, id=390,
- 578.16pt x 433.62pt>
-File: ../imagens/Bucket/Bucket_plot_2_parcialmente_ordenado_decrescente.png Gra
-phic file (type png)
+<../imagens/Merge/merge_plot_3_parcialmente_ordenado_decrescente.png, id=475, 5
+78.16pt x 433.62pt>
+File: ../imagens/Merge/merge_plot_3_parcialmente_ordenado_decrescente.png Graph
+ic file (type png)
 
-<use ../imagens/Bucket/Bucket_plot_2_parcialmente_ordenado_decrescente.png>
-Package pdftex.def Info: ../imagens/Bucket/Bucket_plot_2_parcialmente_ordenado_
-decrescente.png used on input line 399.
-(pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 402.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 402.
-
-[13 <../imagens/Bucket/Bucket_plot_3_ordenado_decrescente.png> <../imagens/Buck
-et/Bucket_plot_2_parcialmente_ordenado_crescente.png>]
-<../imagens/Bucket/Bucket_plot_3_parcialmente_ordenado_decrescente.png, id=402,
- 578.16pt x 433.62pt>
-File: ../imagens/Bucket/Bucket_plot_3_parcialmente_ordenado_decrescente.png Gra
-phic file (type png)
-
-<use ../imagens/Bucket/Bucket_plot_3_parcialmente_ordenado_decrescente.png>
-Package pdftex.def Info: ../imagens/Bucket/Bucket_plot_3_parcialmente_ordenado_
-decrescente.png used on input line 407.
+<use ../imagens/Merge/merge_plot_3_parcialmente_ordenado_decrescente.png>
+Package pdftex.def Info: ../imagens/Merge/merge_plot_3_parcialmente_ordenado_de
+crescente.png used on input line 450.
 (pdftex.def)             Requested size: 346.89867pt x 260.17401pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 416.
+(babel)             in language  on input line 459.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 416.
-[14 <../imagens/Bucket/Bucket_plot_3_parcialmente_ordenado_crescente.png> <../i
-magens/Bucket/Bucket_plot_2_parcialmente_ordenado_decrescente.png>]
+(babel)             in language  on input line 459.
+[16 <../imagens/Merge/merge_plot_1_parcialmente_ordenado_crescente.png> <../ima
+gens/Merge/merge_plot_2_parcialmente_ordenado_crescente.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 416.
+(babel)             in language  on input line 459.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 416.
- [15 <../imagens/Bucket/Bucket_plot_3_parcialmente_ordenado_decrescente.png>]
+(babel)             in language  on input line 459.
+ [17 <../imagens/Merge/merge_plot_3_parcialmente_ordenado_crescente.png> <../im
+agens/Merge/merge_plot_1_parcialmente_ordenado_decrescente.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 459.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 459.
+ [18 <../imagens/Merge/merge_plot_2_parcialmente_ordenado_decrescente.png> <../
+imagens/Merge/merge_plot_3_parcialmente_ordenado_decrescente.png>]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 416.
+(babel)             in language  on input line 459.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1166,52 +1269,52 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 543.
+(babel)             in language  on input line 586.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 543.
-[16
+(babel)             in language  on input line 586.
+[19
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 543.
+(babel)             in language  on input line 586.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 543.
- [17]
+(babel)             in language  on input line 586.
+ [20]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 543.
+(babel)             in language  on input line 586.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 543.
- [18]
+(babel)             in language  on input line 586.
+ [21]
 Cap\'{\i }tulo 4.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 543.
+(babel)             in language  on input line 586.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 549.
+(babel)             in language  on input line 591.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 549.
-[19
+(babel)             in language  on input line 591.
+[22
 
 ]
 Cap\'{\i }tulo 5.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 549.
+(babel)             in language  on input line 591.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 558.
+(babel)             in language  on input line 601.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 558.
-[20
+(babel)             in language  on input line 601.
+[23
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 559.
+(babel)             in language  on input line 602.
 
 Ap\^endice A.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 562.
+(babel)             in language  on input line 605.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 563.
+(babel)             in language  on input line 606.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 564--564
+Overfull \hbox (6.0pt too wide) in paragraph at lines 607--607
 [][][][][][][] 
  []
 
@@ -1220,7 +1323,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 35.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 35.
- [21
+ [24
 
 
 ]
@@ -1228,41 +1331,39 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 85.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 85.
- [22]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 141.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 141.
- [23]
-LaTeX Font Info:    Font shape `TS1/pcr/bx/n' in size <10> not available
-(Font)              Font shape `TS1/pcr/b/n' tried instead on input line 187.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 192.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 192.
- [24])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 567.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 567.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 567.
  [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 567.
- (./RelatorioBucket.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 567.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 567.
-Package rerunfilecheck Info: File `RelatorioBucket.out' has not changed.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 141.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 141.
+ [26]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 192.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 192.
+ [27])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 610.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 610.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 610.
+ [28]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 610.
+ (./RelatorioQuick.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 610.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 610.
+Package rerunfilecheck Info: File `RelatorioQuick.out' has not changed.
 (rerunfilecheck)             Checksum: E8B19FD11A2701F7C70347D06CB2D669;662.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 567.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 610.
  ) 
 Here is how much of TeX's memory you used:
- 13757 strings out of 495004
- 198093 string characters out of 6180662
- 473321 words of memory out of 5000000
- 16271 multiletter control sequences out of 15000+600000
+ 13843 strings out of 495004
+ 200247 string characters out of 6180662
+ 473985 words of memory out of 5000000
+ 16303 multiletter control sequences out of 15000+600000
  24343 words of font info for 61 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 36i,12n,52p,608b,2103s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,52p,610b,2103s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/gmarson/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home
 /gmarson/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/gmarson/
 .texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/gmarson/.texmf-va
@@ -1279,10 +1380,10 @@ ublic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on RelatorioBucket.pdf (25 pages, 593312 bytes).
+Output written on RelatorioQuick.pdf (28 pages, 768818 bytes).
 PDF statistics:
- 1159 PDF objects out of 1200 (max. 8388607)
- 760 compressed objects within 8 object streams
- 446 named destinations out of 1000 (max. 500000)
- 147 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1237 PDF objects out of 1440 (max. 8388607)
+ 835 compressed objects within 9 object streams
+ 495 named destinations out of 1000 (max. 500000)
+ 172 words of extra memory for PDF output out of 10000 (max. 10000000)
 
