@@ -575,6 +575,20 @@ Seguem as tabelas utilizadas para a análise do método Heap Sort.
 \end{table}
 
 
+\begin{table}[h]
+  \centering
+  \caption{Dados para Análise de Memória \label{tab:memoria}}
+  \begin{tabular}{ccc} \\\hline
+  \textbf{Tamanho do Vetor} & \textbf{Memória (MiB)} \\\hline
+  32                        & 24.219000                  \\\hline
+  64                        & 24.043000            \\\hline
+  128                       & 23.070000            \\\hline
+  256                       & 24.238000            \\\hline
+  512                       & 24.262000            \\\hline
+  \end{tabular}
+\end{table}
+
+
 \chapter{Análise}
 
 Podemos observar que todas as curvas de todos os gráficos, exceto os de complexidade de tempo sem a interpolação dos mínimos quadrados(Gráficos \ref{fig:HeapPlot2A},\ref{fig:HeapPlot2OC},\ref{fig:HeapPlot2OD},\ref{fig:HeapPlot2POC},\ref{fig:HeapPlot2POD}), apresentaram uma correspondência forte com a curva da função $F(x) = x lg(x)$, o que nos permite concluir que, dada a complexidade de tempo do algoritmo Heap Sort por $G(x)$ então $F(x) = c * G(x)$ sendo que $c$ é uma constante maior que zero e $x > x_0$. Portanto, podemos verificar que pelo fato do algoritmo heapSort envolver $n$ chamadas da função maxHeapify, que possui complexidade $O(lg(n))$, sua complexidade é $O(n lg(n))$.

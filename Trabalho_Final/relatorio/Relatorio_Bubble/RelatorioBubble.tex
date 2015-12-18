@@ -557,6 +557,20 @@ Seguem as tabelas utilizadas para a análise do método Bubble Sort.
 \end{table}
 
 
+\begin{table}[h]
+  \centering
+  \caption{Dados para Análise de Memória \label{tab:memoria}}
+  \begin{tabular}{ccc} \\\hline
+  \textbf{Tamanho do Vetor} & \textbf{Memória (MiB)} \\\hline
+  32                        & 24.074000                  \\\hline
+  64                        & 24.043000            \\\hline
+  128                       & 23.996000            \\\hline
+  256                       & 24.250000            \\\hline
+  512                       & 24.066000            \\\hline
+  \end{tabular}
+\end{table}
+
+
 \chapter{Análise}
 
 Podemos observar que todas as curvas de todos os gráficos, exceto os de complexidade de tempo sem a interpolação dos mínimos quadrados(Gráficos \ref{fig:BubblePlot2A},\ref{fig:BubblePlot2OC},\ref{fig:BubblePlot2OD},\ref{fig:BubblePlot2POC},\ref{fig:BubblePlot2POD}), apresentaram uma correspondência forte com a curva da função $F(x) = x^2$, o que nos permite concluir que, dada a complexidade de tempo do algoritmo Bubble Sort por $G(x)$ então $F(x) = c * G(x)$ sendo que $c$ é uma constante maior que zero e $x > x_0$. Portanto, o Bubble Sort é $O(n^2)$.
